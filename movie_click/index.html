@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="./main.css">
+    <title>Movie</title>
+</head>
+<body>
+    
+    <header id='navbar'>
+        <div class="container">
+            <div class="menu">
+                 <div class="menu_left">
+                         <img src="./img/logo.svg" alt="T M D B">
+                             <ul class="menu_little">
+                                 <li class="menu-item">
+                                     <a href="#" class="menu-link">Movies</a>
+                                     <ul class="menu_little_">
+                                         <li class="menu-item_">
+                                             <a href="#">Popular</a>
+                                         </li>
+                                         <li class="menu-item_">
+                                             <a href="#">Now Playing</a>
+                                         </li>
+                                         <li class="menu-item_">
+                                             <a href="#">Upcoming</a>
+                                         </li>
+                                         <li class="menu-item_ padding">
+                                             <a href="#">Top Rated</a>
+                                         </li>
+                                     </ul>
+                                 </li>
+                                 <li class="menu-item">
+                                     <a href="#" class="menu-link">TV Shows</a>
+                                     <ul class="menu_little_">
+                                         <li class="menu-item_">
+                                             <a href="#">Popular</a>
+                                         </li>
+                                         <li class="menu-item_">
+                                             <a href="#">Airing Today</a>
+                                         </li>
+                                         <li class="menu-item_">
+                                             <a href="#">On TV</a>
+                                         </li>
+                                         <li class="menu-item_ padding">
+                                             <a href="#">Top Rated</a>
+                                         </li>
+                                     </ul>
+                                 </li>
+                                 <li class="menu-item">
+                                     <a href="#" class="menu-link">People</a>
+                                     <ul class="menu_little_">
+                                         <li class="menu-item_ padding width">
+                                             <a href="#">Popular People</a>
+                                         </li>
+                                     </ul>
+                                 </li>
+                                 <li class="menu-item right">
+                                     <a href="#" class="menu-link">More</a>
+                                     <ul class="menu_little_">
+                                         <li class="menu-item_">
+                                             <a href="#">Disscussions</a>
+                                         </li>
+                                         <li class="menu-item_">
+                                             <a href="#">Leaderboard</a>
+                                         </li>
+                                         <li class="menu-item_">
+                                             <a href="#">Support</a>
+                                         </li>
+                                         <li class="menu-item_ padding">
+                                             <a href="#">API</a>
+                                         </li>
+                                     </ul>
+                                 </li>
+                             </ul>
+                 </div>
+                 <div class="menu_right">
+                         <img class="left plus"  src="./img/plus.svg" alt="" >
+                         <a  class="left language" href="#" >EN</a>
+                         <a  class="left login"  href="#">Login</a>
+                         <a  class="left text"  href="#">Join TMDb</a>
+                         <img class="left"  src="./img/search.svg" alt="search">
+                 </div>
+            </div>
+        </div>
+     </header>
+     <main>
+        <section>
+            <div class="header-menu" id="shortcut_bar_scroller">
+                <ul id="new_shortcut_bar" class="menu-center">
+                    <li class="active">
+                        <a href="#" class="center-link">Overview <i class="fas fa-caret-down"></i></a>
+                        <ul class="in-center-menu">
+                            <li class="actives"><a href="#">Main</a></li>
+                            <li><a href="#">Alternative Titles</a></li>
+                            <li><a href="#">Cast & Crew</a></li>
+                            <li><a href="#">Release Dates</a></li>
+                            <li><a href="#">Translations</a></li>
+                            <li><a href="#">Watch Now</a></li>
+                            <li><a href="#">Changes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="center-link">Media <i class="fas fa-caret-down"></i> </a>
+                        <ul class="in-center-menu width-1">
+                            <li class="actives"><a href="#">Backdrops</a> <span>6</span></li>
+                            <li><a href="#">Logos</a> <span>2</span> </li>
+                            <li><a href="#">Posters</a></li>
+                            <li class="menu-first-hover">
+                                <a class="video-text" href="#">Videos</a> <i class="fas fa-caret-right"></i>
+                                <ul class="menu__">
+                                    <li>
+                                        <a href="#">Trailers <span>1</span> </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="center-link">Fandom <i class="fas fa-caret-down"></i> </a>
+                        <ul class="in-center-menu width-3">
+                            <li class="actives ochblue">
+                                <a href="#">Disscussions</a> <i class="fas fa-caret-right"></i> 
+                            </li>
+                            <li><a href="#">Reviews</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="center-link">Share <i class="fas fa-caret-down"></i> </a>
+                        <ul class="in-center-menu width-3">
+                            <li class="actives"><a href="#">Main</a></li>
+                            <li><a href="#">Alternative Titles</a></li>
+                            <li><a href="#">Cast & Crew</a></li>
+                        </ul>
+                    </li>
+            </div>
+        </section>
+        <section class="bac-Img ">
+                <div class="container CArd">
+                    <div class="line-card">
+                        <div class="Card-img">
+                            <div class="card">
+                                <div class="card-img">
+                                    <img src="./img/card-img.jpg" alt="">
+                                </div>
+                                <div class="card-footer">
+                                    <div class="flex-netfilx">
+                                        <div class="image-netfilx">
+                                            <img src="./img/n.jpg" alt="">
+                                        </div>
+                                        <div class="text-netfilx">
+                                            <p>Now Streaming</p>
+                                            <p>Watch Now</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-img">
+                            <div class="first-line">
+                                <h1><a href="#">Sentinelle</a> (2011)</h1>
+                                <div class="four-text-line">
+                                    <span class="nr">NR</span> 
+                                    <span class="nr-2">03/05/2021 (US)</span> 
+                                    <li><a href="#">Thriller, Action, Drama</a></li> 
+                                    <li>1h 20m</li>
+                                </div>
+                            </div>
+                            <div class="second-line">
+                                <div class="box">
+                                  <div class="circle">
+                                    <p>60 <sup>%</sup> </p>
+                                  </div>
+                                 <div class="teTx">
+                                    <p>User</p>
+                                    <p>Score</p>    
+                                 </div>
+                                </div>
+                                <div class="box-icon">
+                                    <i class="fas fa-bars"></i>
+                                </div>
+                                <div class="box-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="box-icon">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                <div class="box-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="box-play">
+                                    <i class="fas fa-play"></i>
+                                    Play Trailer
+                                </div>
+                            </div>
+                            <div class="three-line">
+                                <h3>Overview</h3>
+                                <p>Transferred home after a traumatizing combat mission, a highly trained French soldier uses her lethal skills to hunt down the man who hurt her sister.</p>
+                            </div>
+                            <div class="four-line">
+                                <div class="left">
+                                    <a href="#">Julien Leclercq</a>
+                                    <p>Director, Writer</p>
+                                </div>
+                                <div class="right">
+                                    <a href="#">Matthieu Serveau</a>
+                                    <p>Writer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="container">
+           <div class="menu-line-center">
+            <div class="big-menu">
+                <div class="header-line">
+                    <h3>Top Billed Cast</h3>
+                </div>
+                <div class="shadow">
+                    <div class="card-line scroller">
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-3.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-2.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-4.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-5.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-1.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-3.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-2.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-4.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-1.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-5.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-2.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-4.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-1.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                        <div class="card-little">
+                            <div class="img-card">
+                                <img src="./img/person-5.jpg" alt="">
+                            </div>
+                            <h4><a href="#">Olga Kurylenko</a></h4>
+                            <p>Klara</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text__line">
+                    <p>Full Cast & Crew</p>
+                    <div class="__line"></div>
+                </div>  
+                <div class="text__line__">
+                    <div class="line__1">
+                        <h3>Social</h3>
+                        <h4> <a href="#">Reviews</a>  <span>0</span> </h4>
+                        <h5> <a href="#">Discussions</a>  <span>1</span> </h5>
+                    </div>
+                    <p>There are no discussions for Sentinelle. Login to be first!</p>
+                    <h2> <a href="#">Go to Discussions</a> </h2>
+                    <div class="__line"></div>
+                </div>
+                <div class="big__img_card_scroller">
+                    <div class="header__text">
+                        <h3>Media</h3>
+                        <ul class="header__menu">
+                            <li class="_header_item active">
+                                <a href="#" class="header_link">Most Popular</a>
+                            </li>
+                            <li class="_header_item">
+                                <a href="#" class="header_link">Videos <span>1</span> </a>
+                            </li>
+                            <li class="_header_item">
+                                <a href="#" class="header_link">Backdrops <span>6</span></a>
+                            </li>
+                            <li class="_header_item ">
+                                <a href="#" class="header_link">Posters <span>10</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card__scroller">
+                        <div class="shadow">
+                            <div class="card-line-1 scroller">
+                                <div class="card-little-1">
+                                    <div class="img-card-1">
+                                        <img src="./img/litle-back.jpg" alt="">
+                                    </div>
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="card-little-1">
+                                    <div class="img-card-2">
+                                        <img src="./img/litle-back.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="card-little-1">
+                                    <div class="img-card-3">
+                                        <img src="./img/card-img.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="__line line__"></div>
+                    <div class="header-line">
+                        <h3>Recommendations</h3>
+                    </div>
+                    <div class="shadow">
+                        <div class="card-line card__B scroller">
+                            <div class="card-little card-bottom">
+                                <div class="img___card">
+                                    <img src="./img/bottom--9.jpg" alt="">
+                                </div>
+                                <p>
+                                    <span>lorem qalisan</span>
+                                    <span>58%</span>
+                                </p>
+                            </div>
+                            <div class="card-little card-bottom">
+                                <div class="img___card">
+                                    <img src="./img/bottom-2.jpg" alt="">
+                                </div>
+                                <p>
+                                    <span>lorem qalisan</span>
+                                    <span>58%</span>
+                                </p>
+                            </div>
+                            <div class="card-little card-bottom">
+                                <div class="img___card">
+                                    <img src="./img/bottom-1.jpg" alt="">
+                                </div>
+                                <p>
+                                    <span>lorem qalisan</span>
+                                    <span>58%</span>
+                                </p>
+                            </div>
+                            <div class="card-little card-bottom">
+                                <div class="img___card">
+                                    <img src="./img/bottom-3.jpg" alt="">
+                                </div>
+                                <p>
+                                    <span>lorem qalisan</span>
+                                    <span>58%</span>
+                                </p>
+                            </div>
+                            <div class="card-little card-bottom">
+                                <div class="img___card">
+                                    <img src="./img/bottom-4.jpg" alt="">
+                                </div>
+                                <p>
+                                    <span>lorem qalisan</span>
+                                    <span>58%</span>
+                                </p>
+                            </div>
+                            <div class="card-little card-bottom">
+                                <div class="img___card">
+                                    <img src="./img/bottom-5.jpg" alt="">
+                                </div>
+                                <p>
+                                    <span>lorem qalisan</span>
+                                    <span>58%</span>
+                                </p>
+                            </div>
+                            <div class="card-little card-bottom">
+                                <div class="img___card">
+                                    <img src="./img/bottom-6.jpg" alt="">
+                                </div>
+                                <p>
+                                    <span>lorem qalisan</span>
+                                    <span>58%</span>
+                                </p>
+                            </div>
+                            <div class="card-little card-bottom">
+                                <div class="img___card">
+                                    <img src="./img/bottom-7.jpg" alt="">
+                                </div>
+                                <p>
+                                    <span>lorem qalisan</span>
+                                    <span>58%</span>
+                                </p>
+                            </div>
+                            <div class="card-little card-bottom">
+                                <div class="img___card">
+                                    <img src="./img/bottom-8.jpg" alt="">
+                                </div>
+                                <p>
+                                    <span>lorem qalisan</span>
+                                    <span>58%</span>
+                                </p>
+                            </div>
+                            <div class="card-little card-bottom">
+                                <div class="img___card">
+                                    <img src="./img/bottom-10.jpg" alt="">
+                                </div>
+                                <p>
+                                    <span>lorem qalisan</span>
+                                    <span>58%</span>
+                                </p>
+                            </div>
+                            <div class="card-little card-bottom">
+                                <div class="img___card">
+                                    <img src="./img/bottom-11.jpg" alt="">
+                                </div>
+                                <p>
+                                    <span>lorem qalisan</span>
+                                    <span>58%</span>
+                                </p>
+                            </div>
+                            <div class="card-little card-bottom">
+                                <div class="img___card">
+                                    <img src="./img/bottom-12.jpg" alt="">
+                                </div>
+                                <p>
+                                    <span>lorem qalisan</span>
+                                    <span>58%</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="little-menu">
+                
+            </div>
+           </div>
+        </section>
+
+
+        <section class="footer">
+            <div class="footer-container">
+                <div class="footer-first">
+                   <div class="images"> <img src="./img/foote-logo.svg" alt=""></div>
+                    <a href="#" class="join">Join the Community</a>
+                </div>
+                <div class="footer-text-menu">
+                    <h3>THE BASICS</h3>
+                    <ul>
+                        <li><a href="#">About TMDb</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Support Forums</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">System Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-text-menu">
+                    <h3>GET INVOLVED</h3>
+                    <ul>
+                        <li><a href="#">Contribution Bible</a></li>
+                        <li><a href="#">3rd Party Applications</a></li>
+                        <li><a href="#">Add New Movie</a></li>
+                        <li><a href="#">Add New TV Show</a></li>
+                    </ul>
+                </div>
+                <div class="footer-text-menu">
+                    <h3>COMMUNITY</h3>
+                    <ul>
+                        <li><a href="#">Guidelines</a></li>
+                        <li><a href="#">Discussions</a></li>
+                        <li><a href="#">Leaderboard</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-text-menu">
+                    <h3>LEGAL</h3>
+                    <ul>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">API Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+     </main>
+    <script src='./mian.js'></script>
+</body>
+</html>
