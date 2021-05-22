@@ -518,6 +518,10 @@ form{
     margin-top: 20px;
     cursor: pointer;
 }
+.btn-and-text .btn a{
+    color : #fff;
+    text-decoration: none;
+}
 .text-menu li{
     color: #cdcdcd;
     margin : 5px -20px;
