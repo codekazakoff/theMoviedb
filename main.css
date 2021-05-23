@@ -11,6 +11,11 @@
     background-color : #011F43;
     display: flex;
     align-items: center;
+    position: fixed;
+    position: fixed;
+    width: 100vw;
+    z-index: 5555555;
+    transition: top 0.2s linear;
 }
 .container{
     width: 100%;
@@ -229,17 +234,14 @@ form{
     color: #91FFCC;
     font-weight: 500;
 }
-.column-cards{
-    padding:20px 0;
+.column-cards,.column-cards-1{
+    padding:20px 0 0 0;
     display : flex;
     justify-content:start;
-    align-items:center;
+    align-items:start;
     overflow-x: scroll;
     transition: height .5s linear;
     position: relative;
-}
-.style{
-    margin-left: 40px;
 }
 .scroller::-webkit-scrollbar{
     height: 8px ;
@@ -267,6 +269,9 @@ form{
     background-image: linear-gradient(to right, rgba(255,255,255,0) 0%, #fff 100%);
     pointer-events: none;
 }
+.card:first-child{
+    margin-left: 40px;
+}
 .card{
     width:151px;
     min-width: 150px;
@@ -274,10 +279,22 @@ form{
     position: relative;
     margin-right: 20px;
 }
+.card h3{
+    font-size: 16px;
+}
+.card p{
+    font-size: 15px;
+    margin: 0;
+}
 .card_img{
     width:100%;
     border-radius: 8px;
 }
+
+.card img{
+    height:225px;
+}
+
 .card li{
     list-style: none;
     cursor: pointer;
@@ -288,8 +305,11 @@ form{
     width:28px;
     height:28px;
     position: absolute;
-    right : 5px;
-    top: 5px;
+    right : 3px;
+    top: -92px;
+}
+.card_menu:last-child{
+    left : -130px;
 }
 .card_menu{
     width: 280px;
@@ -304,9 +324,6 @@ form{
 }
 .finish{
     left:-132px;
-}
-.dod_menu .card_dod:hover .card_menu{
-    opacity: 1;
 }
 .card_menu li{
     padding:10px 10px 10px 18px;
@@ -343,7 +360,7 @@ form{
     position: relative;
     text-align: center;
     top: -25px;
-    left : 5px;
+    left : 8px;
 }
 .card_top_circle::after{
     content: "";
@@ -369,21 +386,28 @@ form{
 .card h3{
     font-size: 1em;
     font-weight: 700;
-    margin: -15px 0 0 5px;
+    justify-content : flex-start;
+    align-items : center;
+    margin-top:-15px
 }
 .card h3 a{
     text-decoration: none;
     color: #000;
-    transition: 0.4s ease-in-out;
+    transition: 0.4s;
+    justify-content : flex-start;
+    align-items : center;
 }
 .card h3 a:hover{
     color: rgb(1,180,228);
 }
 .card p{
     font-weight: 500;
-    color :rgba(0,0,0,0.6);
+    color :rgba(0,0,0,0.4);
     font-size: 1em;
-    margin : 5px 0 10px -45px;
+    display: flex;
+    justify-content : flex-start;
+    align-items : center;
+    margin-top: 6px;
 }
 .card{
     margin-bottom: 20px;

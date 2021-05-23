@@ -11,6 +11,11 @@
     background-color : #011F43;
     display: flex;
     align-items: center;
+    position: fixed;
+    position: fixed;
+    width: 100vw;
+    z-index: 5555555;
+    transition: top 0.2s linear;
 }
 .container{
     width: 100%;
@@ -99,6 +104,7 @@
     text-transform : uppercase;
     border: 1px solid #fff;
     transition: 0.4s ;
+    margin-right: 25px;
 }
 .language:hover{
     background-color : #fff;
@@ -114,11 +120,13 @@
     height : 29.5px;
 }
 .left{
-    margin-left: 30px;
+    margin-right: 25px;
     cursor: pointer;
+    font-size: 16px !important;
 }
 .plus{
     margin-left: 0;   
+    margin-right: 25px;
 }
 .header-menu{
     max-width:385px;

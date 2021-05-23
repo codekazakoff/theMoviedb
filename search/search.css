@@ -11,6 +11,12 @@
     background-color : #011F43;
     display: flex;
     align-items: center;
+    position: fixed;
+    position: fixed;
+    width: 100vw;
+    z-index: 5555555;
+    transition: top 0.2s linear;
+    margin-top: -64px;
 }
 .container{
     width: 100%;
@@ -124,7 +130,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 64px;
     position : sticky;
 }
 .search{
