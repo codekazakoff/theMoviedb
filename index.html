@@ -107,10 +107,10 @@
             <div class="column-header container">
                 <h2>What's Popular</h2>
                 <div class="selector_wrap">
-                    <a href="/" class="anchor selected">Streaming</a>
-                    <a href="/" class="anchor ">on TV</a>
-                    <a href="/" class="anchor ">For Rent</a>
-                    <a href="/" class="anchor ">In Theaters</a>
+                    <p id="stream" onclick="foo(this)" class="anchor selected">Streaming</a>
+                    <p id="onTv" onclick="foo(this)" class="anchor ">on TV</a>
+                    <p id="forRent" onclick="foo(this)" class="anchor ">For Rent</a>
+                    <p id="inTheatres" onclick="foo(this)" class="anchor ">In Theaters</a>
                 </div>
             </div>
             <div class="shadow">
@@ -121,8 +121,8 @@
             <div class="column-header container">
                 <h2>Free To Watch</h2>
                 <div class="selector_wrap">
-                    <a href="/" class="anchor selected">Movies</a>
-                    <a href="/" class="anchor ">TV</a>
+                    <h4 onclick="foo1(this)" class="anchor selected">Movies</h4>
+                    <h4 onclick="foo1(this)" class="anchor ">TV</h4>
                 </div>
             </div>
             <div class="shadow">
@@ -130,560 +130,36 @@
             </div>
         </section>      
         <section class="column-3 ">
-            <div class="backImg shadow">
+            <div class="shadow">
                     <div class="column-header marTop container">
                         <h2>Latest Trailers</h2>
                         <div class="selector_wrap border">
-                            <a href="/" class="anchor color select">Streaming</a>
-                            <a href="/" class="anchor color ">on TV</a>
-                            <a href="/" class="anchor color ">For Rent</a>
-                            <a href="/" class="anchor color ">In Theaters</a>
+                            <h3 onclick="foo2(this)" class="anchor color select">Streaming</h3>
+                            <h3 onclick="foo2(this)" class="anchor color ">on TV</h3>
+                            <h3 onclick="foo2(this)" class="anchor color ">For Rent</h3>
+                            <h3 onclick="foo2(this)" class="anchor color ">In Theaters</h3>
                         </div>
                     </div>
-                    <div>
+                    <div class="column-header-top">
                         <div class="actor-group scroller">
-                            
+                            <!-- <div class="backImg">
+                                <img src="./img/IMH/BACK-1.jpg" alt="">
+                            </div> -->
                         </div>
                     </div>
             </div>
         </section>
-        <section class="column ">
+        <section class="column mt-3">
             <div class="column-header container">
-                <h2>Free To Watch</h2>
+                <h2>Trending</h2>
                 <div class="selector_wrap">
-                    <a href="/" class="anchor selected">Movies</a>
-                    <a href="/" class="anchor ">TV</a>
+                    <span onclick="foo3(this)" class="anchor selected">Today</span>
+                    <span onclick="foo3(this)" class="anchor ">This week</span>
                 </div>
             </div>
             <div class="shadow">
               <div class="misk"> 
-                  <div class="column-cards scroller">
-                    <div class="card line style">
-                        <img class="card_img" src="./img/garry.jpg" alt="">
-                        <div class="card_top_circle present">
-                            <span>89%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img11.jpg" alt="">
-                        <div class="card_top_circle present">
-                            <span>89%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img14.jpg" alt="">
-                        <div class="card_top_circle present">
-                            <span>89%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img9.jpg" alt="">
-                        <div class="card_top_circle present">
-                            <span>89%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img8.jpg" alt="">
-                        <div class="card_top_circle present">
-                            <span>89%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img7.jpg" alt="">
-                        <div class="card_top_circle present">
-                            <span>89%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img12.jpg" alt="">
-                        <div class="card_top_circle">
-                            <span>72%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img5.jpg" alt="">
-                        <div class="card_top_circle">
-                            <span>72%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img4.jpg" alt="">
-                        <div class="card_top_circle">
-                            <span>72%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img6.jpg" alt="">
-                        <div class="card_top_circle">
-                            <span>72%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img13.jpg" alt="">
-                        <div class="card_top_circle">
-                            <span>72%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu finish">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img7.jpg" alt="">
-                        <div class="card_top_circle">
-                            <span>72%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu finish">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img12.jpg" alt="">
-                        <div class="card_top_circle">
-                            <span>72%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img5.jpg" alt="">
-                        <div class="card_top_circle">
-                            <span>72%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img4.jpg" alt="">
-                        <div class="card_top_circle">
-                            <span>72%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img6.jpg" alt="">
-                        <div class="card_top_circle">
-                            <span>72%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img13.jpg" alt="">
-                        <div class="card_top_circle">
-                            <span>72%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu finish">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img7.jpg" alt="">
-                        <div class="card_top_circle">
-                            <span>72%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu finish">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img13.jpg" alt="">
-                        <div class="card_top_circle present">
-                            <span>89%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img12.jpg" alt="">
-                        <div class="card_top_circle present">
-                            <span>89%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu finish">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                    <div class="card line">
-                        <img class="card_img" src="./img/img2.jpg" alt="">
-                        <div class="card_top_circle present">
-                            <span>89%</span>
-                        </div>
-                        <h3><a href="#">Space Sweeperc</a></h3>
-                        <p>Feb 05, 2021</p>
-                        <li class="dod_menu">
-                            <span><img class="card_dod" src="./img/threedod.svg" alt=""></>
-                            <ul class="card_menu finish">
-                                <li class="dod_first">
-                                    <span>Want to rate or add this item to a list?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Login <span>&#10095;</span></a>
-                                </li>
-                                <li>
-                                    <span>Not a member?</span>
-                                </li>
-                                <li class="dod_hover">
-                                    <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                  </div>
+                  <div class="scroller column-cards-2"></div>
               </div>
             </div>
         </section> 
@@ -879,7 +355,8 @@
     </main>
 
 
-    <div class="salom"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="./main.js"></script>
 </body>
 </html>

@@ -205,11 +205,13 @@ form{
 .column-3{
     max-width: 1279px;
     margin : 0 auto;
+    /* margin-bottom: 40px; */
 }
 .column-header{
     display: flex;
     justify-content: start;
     align-items: center;
+    z-index: 8888;
 }
 .column-header h2{
     margin-right: 20px;
@@ -228,13 +230,15 @@ form{
     border-radius:25px;
     color : #011f43;
     font-weight: 600;
+    cursor: pointer;
+    transition: .1s 0.1s ease-in;
 }
 .selected{
     background-color : #011F43;
     color: #91FFCC;
     font-weight: 500;
 }
-.column-cards,.column-cards-1{
+.column-cards,.column-cards-1, .column-cards-2{
     padding:20px 0 0 0;
     display : flex;
     justify-content:start;
@@ -346,9 +350,6 @@ form{
 .card_menu .dod_hover span{
     color: #032541;
 }
-.card_menu .dod_hover:hover span{
-    display : none;
-}
 .card_top_circle{
     width:38px;
     height:38px;
@@ -416,7 +417,7 @@ form{
     margin-bottom: 0;
 }
 .marTop{
-    padding-top: 30px;
+    padding-top: 25px;
     color: #fff;
 }
 .marTop .border{
@@ -430,26 +431,46 @@ form{
     color: #032541;
 }
 .backImg{
-    background-image: url('./img/IMH/BACK-1.jpg');
+    z-index: -1;
     height:390px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+}
+.backImg img{
+    z-index: -5555;
+    height:390px;
+    position: absolute;
+    width : 1279px;
+    top: 0;
+    left: 0;
+    display : flex;
+    justify-content:  center;
+    align-items: center;
 }
 .actor-group{
+    z-index: 11;
     display: flex;
     justify-content: start;
     align-items: center;
     overflow-x: scroll; 
+    height : 333px;
+    overflow-y: hidden;
 }
+/* .actor-card:nth-child(15){
+    margin-top: 28px;
+} */
 .actor-card{
+    cursor : pointer;
     width: 330px;
     border-radius: 6px 6px 0 0;
-    margin: 30px 20px 50px 0;
+    margin: 5px 20px 6px 20px;
+    z-index: 55;
+}
+.actor-card:first-child{
+    margin :  0 20px 0 0;
 }
 .actor-box-mg{
     width : 330px;
     height : 185px;
+    margin-left: 20px;
     border-radius: 6px;
     position: relative;
     box-shadow: 1px 1px rgba(0, 0, 0, 0.1);
@@ -466,21 +487,26 @@ form{
     left : 50%;
     cursor: pointer;
 }
+.d-flex{
+    margin-left: 20px;
+}
 .actor-card h3,p{
     text-align: center;
     color : #fff;
+    font-size: 16px;
 }
 .actor-card a{
     color: #fff;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
 }
 .actor-card h3{
     margin-top: 10px;
 }
 .actor-card p{
     margin-top: 5px;
-    font-size: 18px;
+    font-size: 16px;
+    overflow: hidden;
 }
 .actor-card li{
     list-style: none;
