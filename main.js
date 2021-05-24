@@ -48,7 +48,7 @@ const Movie = {
     results.forEach((result) =>{
         document.querySelector('.actor-group').innerHTML+=`
             <div class="backImg">
-                <img src="https://image.tmdb.org/t/p/w500$/t/p/w1920_and_h427_multi_faces/${result.backdrop_path}" alt="">
+                <img src="https://image.tmdb.org/t/p/w500/t/p/w1920_and_h427_multi_faces/${result.backdrop_path}" alt="">
             </div>
             <div class="actor-card">
                 <div class="actor-box-mg">

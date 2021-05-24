@@ -133,6 +133,7 @@
     height:46px;
     margin: 0 auto;
     text-align: center;
+    padding-top: 64px;
 }
 .menu-center{
     display: flex;
@@ -250,6 +251,14 @@
 .width-3 .ochblue:hover a{
     color: #fff;
 }
+.ww{
+    list-style : none; 
+    margin-left: 6px;
+}
+.tagline{
+    color: #727272 !important;
+    font-style: italic !important;
+}
 .bac-Img{
     background-image:linear-gradient(to bottom right, rgba(7.84%, 9.41%, 7.84%, 1.00), rgba(7.84%, 9.41%, 7.84%, 0.84)), url('./img/back.jpg');
     height: 570px;
@@ -257,6 +266,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: -3px;
+    margin-top: 43px;
     background-position: center center;
 }
 .CArd{
