@@ -106,12 +106,6 @@ fetch(details)
 const popular = 'https://api.themoviedb.org/3/person/popular?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
 
 
-
-
-
-
-
-
 const personImage = 'https://api.themoviedb.org/3/person/1468490/images?api_key=8a6efddbf519aa74be6e68f9ecfd443f';
 const ii = 'https://api.themoviedb.org/3/person/1901875?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US';
 fetch(personImage)
@@ -139,7 +133,7 @@ fetch(recommends)
     results.forEach(result => {
       console.log(result);
       document.querySelector('.card-tag-line').innerHTML += `
-        <div class="card-little card-bottom">
+        <div class="card-little card-tag-lineer card-bottom">
           <div class="img___card">
               <img src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="">
           </div>

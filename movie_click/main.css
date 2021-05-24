@@ -269,6 +269,9 @@
     margin-top: 43px;
     background-position: center center;
 }
+.card-tag-line .card-little{
+    height: 175px;
+}
 .CArd{
     display: flex;
     justify-content: center;
