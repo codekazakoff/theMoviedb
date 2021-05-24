@@ -39,28 +39,9 @@ const url = 'https://titleId.playfabapi.com/Server/GetLeaderboard';
 
 
 
-fetch(alternativeTitles)
-.then(response => response.json())
-.then(data => {
-    // console.log(`https://image.tmdb.org/t/p/w500//${data.profile_path}`)
-    console.log(data);
-})
-// fetch(trending)
-// .then(res => res.json())
-// .then(data =>{
-//     const {results} = data;
-//     results.forEach((result) =>{
-//         console.log(`https://image.tmdb.org/t/p/w500${result.poster_path}`)
-//     })
-//     // console.log(results);
-// })
-// .catch(err => console.log(err));
-
-
-
 const Movie = {
-    getUpcommingFace : function() {
-    fetch(getUpcomming)
+    getnowPlayingFace : function() {
+    fetch(nowPlaying)
     .then(res => res.json())
     .then(data =>{
     const {results} = data;
@@ -99,19 +80,23 @@ const Movie = {
                 <h3><a href="./movie_click/index.html">${result.title}</a></h3>
                 <p>${result.release_date}</p>
                 <li class="dod_menu">
-                    <span><img class="card_dod" id="dod" src="./img/threedod.svg" alt=""></span>
-                    <ul class="card_menu">
-                        <li class="dod_first">
-                            <span>Want to rate or add this item to a list?</span>
+                    <span><img class="card_dod" id="dod" onclick={$('#card_menu').show();} src="./img/threedod.svg" alt=""></span>
+                    <ul class="card_menu" id="card_menu">
+                        <li class="dod_item">
+                            <i class="fas fa-bars"></i>
+                            <a class="dod_link">Add to list</a>
                         </li>
-                        <li class="dod_hover">
-                            <a href="#">Login <span>&#10095;</span></a>
+                        <li class="dod_item">
+                            <i class="fas fa-heart"></i>
+                            <a class="dod_link">Favorite</a>
                         </li>
-                        <li>
-                            <span>Not a member?</span>
+                        <li class="dod_item">
+                            <i class="far fa-comment"></i>
+                            <a class="dod_link">Watchlist</a>
                         </li>
-                        <li class="dod_hover">
-                            <a href="#">Sign up and join the community <span>&#10095;</span></a>
+                        <li class="dod_item">
+                            <i class="fas fa-star"></i>
+                            <a class="dod_link">Your rating</a>
                         </li>
                     </ul>
                 </li>
@@ -135,22 +120,26 @@ const Movie = {
           <h3><a href="./movie_click/index.html">${result.title}</a></h3>
           <p>${result.release_date}</p>
           <li class="dod_menu">
-              <span><img class="card_dod" id="dod" src="./img/threedod.svg" alt=""></span>
-              <ul class="card_menu">
-                  <li class="dod_first">
-                      <span>Want to rate or add this item to a list?</span>
-                  </li>
-                  <li class="dod_hover">
-                      <a href="#">Login <span>&#10095;</span></a>
-                 </li>
-                  <li>
-                      <span>Not a member?</span>
-                  </li>
-                  <li class="dod_hover">
-                      <a href="#">Sign up and join the community <span>&#10095;</span></a>
-                  </li>
-              </ul>
-          </li>
+                <span><img class="card_dod" onclick={$('#card_menu').show();} id="dod" src="./img/threedod.svg" alt=""></span>
+                <ul class="card_menu" id="card_menu">
+                    <li class="dod_item">
+                        <i class="fas fa-bars"></i>
+                        <a class="dod_link">Add to list</a>
+                    </li>
+                    <li class="dod_item">
+                        <i class="fas fa-heart"></i>
+                        <a class="dod_link">Favorite</a>
+                    </li>
+                    <li class="dod_item">
+                        <i class="far fa-comment"></i>
+                        <a class="dod_link">Watchlist</a>
+                    </li>
+                    <li class="dod_item">
+                        <i class="fas fa-star"></i>
+                        <a class="dod_link">Your rating</a>
+                    </li>
+                </ul>
+            </li>
     </div>
     `)
     })
@@ -162,7 +151,8 @@ const Movie = {
         .then(res => res.json())
         .then(popular =>{
             const {results} = popular;
-            results.map((result) =>{
+            results.map((result,index) =>{
+                console.log(index);
                 document.querySelector('.column-cards-2').innerHTML +=(`
                 <div class="card">
                 <img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt="">
@@ -171,20 +161,24 @@ const Movie = {
                 </div>
                 <h3><a href="./movie_click/index.html">${result.title}</a></h3>
                 <p>${result.release_date}</p>
-                <li class="dod_menu">
-                    <span><img class="card_dod" id="dod" onclick="toggle()" src="./img/threedod.svg" alt=""></span>
-                    <ul class="card_menu">
-                        <li class="dod_first">
-                            <span>Want to rate or add this item to a list?</span>
+                <li class="dod_menu" id="dod_menu">
+                    <span><img class="card_dod" onclick={$('#card_menu').show();} id="dod" src="./img/threedod.svg" alt=""></span>
+                    <ul class="card_menu" id="card_menu">
+                        <li class="dod_item">
+                            <i class="fas fa-bars"></i>
+                            <a class="dod_link">Add to list</a>
                         </li>
-                        <li class="dod_hover">
-                            <a href="#">Login <span>&#10095;</span></a>
+                        <li class="dod_item">
+                            <i class="fas fa-heart"></i>
+                            <a class="dod_link">Favorite</a>
                         </li>
-                        <li>
-                            <span>Not a member?</span>
+                        <li class="dod_item">
+                            <i class="far fa-comment"></i>
+                            <a class="dod_link">Watchlist</a>
                         </li>
-                        <li class="dod_hover">
-                            <a href="#">Sign up and join the community <span>&#10095;</span></a>
+                        <li class="dod_item">
+                            <i class="fas fa-star"></i>
+                            <a class="dod_link">Your rating</a>
                         </li>
                     </ul>
                 </li>
@@ -195,61 +189,11 @@ const Movie = {
 .catch(err => console.log(err));
     }
 }
-Movie.getUpcommingFace();
+Movie.getnowPlayingFace();
 Movie.getPopular();
 Movie.getUpcomming();
 Movie.getRecommends();
 
-
-// let Streaming = document.getElementById('#onTv');
-// Streaming.addEventListener('click' , ()=>{
-//     Streaming.classList.add('selected');
-// })
-
-// function foo(elem) {
-//     var a = document.getElementsByTagName('p')
-//     for (i = 0; i < a.length; i++) {
-//         a[i].classList.remove('selected');
-//     }
-//     elem.classList.add('selected');   
-// }
-// let streaming = document.getElementById('stream');
-// let onTv = document.getElementById('onTv');
-// let forRent = document.getElementById('forRent');
-// let inTheatres = document.getElementById('inTheatres');
-
-// streaming.addEventListener('click' , ()=>{
-//     streaming.classList.add('selected');
-//     onTv.classList.remove('selected');
-//     forRent.classList.remove('selected');
-//     inTheatres.classList.remove('selected');
-// })
-
-// onTv.addEventListener('click' , ()=>{
-//     onTv.classList.add('selected');
-//     streaming.classList.remove('selected');
-//     forRent.classList.remove('selected');
-//     inTheatres.classList.remove('selected');
-// })
-
-// forRent.addEventListener('click' , ()=>{
-//     forRent.classList.add('selected');
-//     streaming.classList.remove('selected');
-//     onTv.classList.remove('selected');
-//     inTheatres.classList.remove('selected');
-// })
-
-// inTheatres.addEventListener('click' , ()=>{
-//     inTheatres.classList.add('selected');
-//     streaming.classList.remove('selected');
-//     onTv.classList.remove('selected');
-//     forRent.classList.remove('selected');
-// })
-
- var dod =  document.getElementById('dod');
-function toggle(){
-        console.log(dod);
-}
 
 function foo(elem) {
     var a = document.getElementsByTagName('p')
