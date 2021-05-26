@@ -1,26 +1,29 @@
-  var prevScrollpos = window.pageYOffset;
-  window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar").style.top = "0";
-    } else {
-      document.getElementById("navbar").style.top = "-70px";
-    }
-    prevScrollpos = currentScrollPos;
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-70px";
   }
+  prevScrollpos = currentScrollPos;
+}
+const one_moveiId = JSON.parse(localStorage.getItem("id"));
 const adi = "804435";
-const details = 'https://api.themoviedb.org/3/movie/804435?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US'
+const details = `https://api.themoviedb.org/3/movie/${one_moveiId}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`
 const getUpcomming = 'https://api.themoviedb.org/3/movie/upcoming?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
-const recommends = 'https://api.themoviedb.org/3/movie/804435/recommendations?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1'
+const recommends = `https://api.themoviedb.org/3/movie/${one_moveiId}/recommendations?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1`;
 
 
 fetch(details)
 .then(res => res.json())
 .then(data => {
-  var topVideoId = data.id;
+    // localStorage.setItem("person_details_id", data.production_companies[1].id);
+    // console.log(data);
   document.querySelector('.details-back-img').innerHTML =
 `
-            <div class="bac-Img" >
+        <div class="costum_bg">   
+            <div class="bac-Img"  style="background-image : linear-gradient(to bottom right, rgba(7.84%, 9.41%, 7.84%, 1.00), rgba(7.84%, 9.41%, 7.84%, 0.84)),url(https://image.tmdb.org/t/p/w500/t/p/w1920_and_h800_multi_faces/${data.backdrop_path})">
                 <div class="container CArd">
                     <div class="line-card">
                         <div class="Card-img">
@@ -48,9 +51,9 @@ fetch(details)
                                     <span class="nr">NR</span> 
                                     <span class="nr-2">${data.release_date} (${data.production_countries[0].iso_3166_1})</span> 
                                     <li class="ww">
-                                    <a href="#">${data.genres[0].name},</a>
-                                    <a href="#">${data.genres[1].name},</a>
-                                    <a href="#">${data.genres[2].name}</a>
+                                    <a href="#">${data.genres[0].name}</a>
+                                    <a href="#">${data.genres.length === 2 ? data.genres[1].name : data.genres.length === 3 ? data.genres[1].name : "Dramma"},</a>
+                                    <a href="#">${data.genres.length === 3 ? data.genres[2].name : data.genres.length === 2 ? data.genres[0].name : "Action" }</a>
                                     <li>1h 20m</li>
                                     </li> 
                                 </div>
@@ -100,42 +103,86 @@ fetch(details)
                         </div>
                     </div>
                 </div>
-</div>`
-  console.log(topVideoId);  
+            </div>
+        </div>`
 });
+
+fetch(details)
+.then(res=> res.json())
+.then(data => {
+    // console.log(data)
+        document.querySelector('.card__scroller').innerHTML+= `
+        <div class="shadow">
+            <div class="card-line-1 scroller">
+                <div class="card-little-1">
+                    <div class="img-card-1">
+                        <img src="https://image.tmdb.org/t/p/w500/t/p/w533_and_h300_face/${data.poster_path}" alt="">
+                    </div>
+                    <i class="fas fa-play"></i>
+                </div>
+                <div class="card-little-1">
+                    <div class="img-card-2">
+                        <img src="https://image.tmdb.org/t/p/w500/t/p/w533_and_h300_bestv2/${data.backdrop_path}" alt="">
+                    </div>
+                </div>
+                <div class="card-little-1">
+                    <div class="img-card-3">
+                        <img src="https://image.tmdb.org/t/p/w500/${data.poster_path}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    `   
+})
+
+
+
+
+
+
+
 const popular = 'https://api.themoviedb.org/3/person/popular?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
+const personImage = `https://api.themoviedb.org/3/person/53?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`;
+// fetch(personImage)
+// .then(res => res.json())
+// .then(data => console.log(data));
 
-
-const personImage = 'https://api.themoviedb.org/3/person/1468490/images?api_key=8a6efddbf519aa74be6e68f9ecfd443f';
+// const peopleImagePerson = JSON.parse(localStorage.getItem('person_details_id'))
 const ii = 'https://api.themoviedb.org/3/person/1901875?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US';
-fetch(personImage)
+fetch(popular)
 .then( res => res.json())
 .then(data =>{
-  const {profiles} = data;
-  // console.log(profiles);
-  profiles.forEach(profile => {
+    // console.log(data);
+    const {results} = data;
+    results.forEach((result,index) => {
     document.querySelector('.card-line').innerHTML += `  
     <div class="card-little">
       <div class="img-card">
-          <img src="https://image.tmdb.org/t/p/w500${profile.file_path}" alt="">
+          <img src="https://image.tmdb.org/t/p/w500${result.profile_path}" alt="">
       </div>
-      <h4><a href="#">Olga Kurylenko</a></h4>
-      <p>Klara</p>
+      <h4><a href="#">${result.name}</a></h4>
+      <p>${result.known_for_department}</p>
     </div>      
 `
-  })
 })
+})
+const one_moveiId_2 = JSON.parse(localStorage.getItem("person_details_id"));
+const recommend = `https://api.themoviedb.org/3/movie/${one_moveiId_2}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`;
+fetch(recommend)
+.then(res => res.json())
+.then(data => console.log(data));
 
 fetch(recommends)
 .then(res => res.json())
 .then(data => {
     const {results} = data;
     results.forEach(result => {
-      console.log(result);
       document.querySelector('.card-tag-line').innerHTML += `
         <div class="card-little card-tag-lineer card-bottom">
           <div class="img___card">
-              <img src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="">
+              <a href="#"../movie_click/index.html>
+              <img src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" onclick="next_page_details_2(${result.id})" alt="">
+              </a>
           </div>
           <p> 
               <span>${result.title}</span>
@@ -146,3 +193,7 @@ fetch(recommends)
     })
 });
 
+function next_page_details_2(id_img){
+    console.log(id_img);
+    localStorage.setItem('person_details_id', id_img);
+}

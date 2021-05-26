@@ -281,6 +281,7 @@ form{
     min-width: 150px;
     border-radius:8px;
     position: relative;
+    cursor: pointer !important;
     margin-right: 20px;
 }
 .card h3{
@@ -312,7 +313,9 @@ form{
     position: absolute;
     right : 3px;
     top: -92px;
+    cursor: pointer !important;
 }
+
 .card_menu{
     height:150px;
     border-radius:4px;
@@ -455,14 +458,12 @@ form{
     height : 333px;
     overflow-y: hidden;
 }
-/* .actor-card:nth-child(15){
-    margin-top: 28px;
-} */
 .actor-card{
+    height: 270px;
     cursor : pointer;
     width: 330px;
     border-radius: 6px 6px 0 0;
-    margin: 5px 20px 6px 20px;
+    margin: 10px 20px 6px 20px;
     z-index: 55;
 }
 .actor-card:first-child{

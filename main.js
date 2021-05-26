@@ -1,4 +1,4 @@
-   var prevScrollpos = window.pageYOffset;
+{var prevScrollpos = window.pageYOffset;
    window.onscroll = function() {
    var currentScrollPos = window.pageYOffset;
    if (prevScrollpos > currentScrollPos) {
@@ -7,7 +7,7 @@
     document.getElementById("navbar").style.top = "-70px";
    }
    prevScrollpos = currentScrollPos;
-}
+}}
 const apiKey = '8a6efddbf519aa74be6e68f9ecfd443f';
 const search = 'https://api.themoviedb.org/3/search/movie?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&query=Mortal%20Kombat&page=1&include_adult=false'
 const trending = 'https://api.themoviedb.org/3/trending/movie/day?api_key=8a6efddbf519aa74be6e68f9ecfd443f';
@@ -35,24 +35,22 @@ const alternativeTitles = 'https://api.themoviedb.org/3/movie/804435/alternative
 const accountState = 'https://api.themoviedb.org/3/movie/804435/account_states?api_key=8a6efddbf519aa74be6e68f9ecfd443f';
 const rated = 'https://api.themoviedb.org/3/movie/top_rated?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
 
-const url = 'https://titleId.playfabapi.com/Server/GetLeaderboard';
 
-
-
-const Movie = {
-    getnowPlayingFace : function() {
-    fetch(nowPlaying)
-    .then(res => res.json())
-    .then(data =>{
+fetch(nowPlaying)
+.then(res => res.json())
+.then(data =>{
     const {results} = data;
     results.forEach((result) =>{
+        console.log(" RSSED",result)
         document.querySelector('.actor-group').innerHTML+=`
             <div class="backImg">
                 <img src="https://image.tmdb.org/t/p/w500/t/p/w1920_and_h427_multi_faces/${result.backdrop_path}" alt="">
             </div>
-            <div class="actor-card">
+            <div class="actor-card" onclick="next_page_details(${result.id})">
                 <div class="actor-box-mg">
-                    <img src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="Not found Img">
+                    <a href="./movie_click/index.html">
+                        <img onmousemove="next_image()" src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="Not found Img">
+                    </a>
                     <i class="fas fa-play"></i>
                 </div>
                 <div class="d-flex">
@@ -62,25 +60,29 @@ const Movie = {
             </div>
         `
     })
-    })
+})
 .catch(err => console.log(err));
-    },
-    getPopular : function(){
-        fetch(getPopular)
-        .then(res => res.json())
-        .then(popular =>{
+
+function next_image(){
+    
+}
+
+
+fetch(getPopular)
+.then(res => res.json())
+.then(popular =>{
             const {results} = popular;
             results.map((result) =>{
                 document.querySelector('.column-cards').innerHTML +=(`
-                <div class="card">
-                <img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt="">
+                <div class="card" onclick="next_page_details(${result.id})">
+                <a href="./movie_click/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
                 <div class="card_top_circle present">
                     <span>${result.vote_average * 10}%</span>
                 </div>
                 <h3><a href="./movie_click/index.html">${result.title}</a></h3>
                 <p>${result.release_date}</p>
                 <li class="dod_menu">
-                    <span><img class="card_dod" id="dod" onclick={$('#card_menu').show();} src="./img/threedod.svg" alt=""></span>
+                    <span><img class="card_dod" id="dod"  src="./img/threedod.svg" alt=""></span>
                     <ul class="card_menu" id="card_menu">
                         <li class="dod_item">
                             <i class="fas fa-bars"></i>
@@ -102,67 +104,69 @@ const Movie = {
                 </li>
             </div>
             `)})
-        })
-        .catch(err => console.log(err));
-    },
-    getUpcomming : function() {
-        fetch(getUpcomming)
-        .then(res => res.json())
-        .then(popular =>{
-        const {results} = popular;
-        results.map((result) =>{
-        document.querySelector('.column-cards-1').innerHTML +=(`
-        <div class="card">
-          <img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt="">
-          <div class="card_top_circle present">
-              <span>${result.vote_average * 10}%</span>
-          </div>
-          <h3><a href="./movie_click/index.html">${result.title}</a></h3>
-          <p>${result.release_date}</p>
-          <li class="dod_menu">
-                <span><img class="card_dod" onclick={$('#card_menu').show();} id="dod" src="./img/threedod.svg" alt=""></span>
-                <ul class="card_menu" id="card_menu">
-                    <li class="dod_item">
-                        <i class="fas fa-bars"></i>
-                        <a class="dod_link">Add to list</a>
-                    </li>
-                    <li class="dod_item">
-                        <i class="fas fa-heart"></i>
-                        <a class="dod_link">Favorite</a>
-                    </li>
-                    <li class="dod_item">
-                        <i class="far fa-comment"></i>
-                        <a class="dod_link">Watchlist</a>
-                    </li>
-                    <li class="dod_item">
-                        <i class="fas fa-star"></i>
-                        <a class="dod_link">Your rating</a>
-                    </li>
-                </ul>
+})
+.catch(err => console.log(err));
+
+
+
+
+fetch(getUpcomming)
+.then(res => res.json())
+.then(popular =>{
+const {results} = popular;
+results.map((result) =>{
+document.querySelector('.column-cards-1').innerHTML +=(`
+<div class="card" onclick="next_page_details(${result.id})">
+<a href="./movie_click/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
+  <div class="card_top_circle present">
+      <span>${result.vote_average * 10}%</span>
+  </div>
+  <h3><a href="./movie_click/index.html">${result.title}</a></h3>
+  <p>${result.release_date}</p>
+  <li class="dod_menu">
+        <span><img class="card_dod" id="dod"  src="./img/threedod.svg" alt=""></span>
+        <ul class="card_menu" id="card_menu">
+            <li class="dod_item">
+                <i class="fas fa-bars"></i>
+                <a class="dod_link">Add to list</a>
             </li>
-    </div>
-    `)
-    })
-        })
-        .catch(err => console.log(err));
-    },
-    getRecommends : function() {
-        fetch(recommends)
-        .then(res => res.json())
-        .then(popular =>{
+            <li class="dod_item">
+                <i class="fas fa-heart"></i>
+                <a class="dod_link">Favorite</a>
+            </li>
+            <li class="dod_item">
+                <i class="far fa-comment"></i>
+                <a class="dod_link">Watchlist</a>
+            </li>
+            <li class="dod_item">
+                <i class="fas fa-star"></i>
+                <a class="dod_link">Your rating</a>
+            </li>
+        </ul>
+    </li>
+</div>
+`)
+})
+})
+.catch(err => console.log(err));
+
+next_page_details_2
+fetch(recommends)
+.then(res => res.json())
+.then(popular =>{
             const {results} = popular;
             results.map((result,index) =>{
-                console.log(index);
+                console.log(result.id);
                 document.querySelector('.column-cards-2').innerHTML +=(`
-                <div class="card">
-                <img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt="">
+                <div class="card" onclick="next_page_details(${result.id})">
+                <a href="./movie_click/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
                 <div class="card_top_circle present">
                     <span>${Math.ceil(result.vote_average * 10)}%</span>
                 </div>
                 <h3><a href="./movie_click/index.html">${result.title}</a></h3>
                 <p>${result.release_date}</p>
                 <li class="dod_menu" id="dod_menu">
-                    <span><img class="card_dod" onclick={$('#card_menu').show();} id="dod" src="./img/threedod.svg" alt=""></span>
+                    <span><img class="card_dod"  id="dod"  src="./img/threedod.svg" alt=""></span>
                     <ul class="card_menu" id="card_menu">
                         <li class="dod_item">
                             <i class="fas fa-bars"></i>
@@ -185,42 +189,29 @@ const Movie = {
             </div>
             `)
             })
-        })
+})
 .catch(err => console.log(err));
-    }
-}
-Movie.getnowPlayingFace();
-Movie.getPopular();
-Movie.getUpcomming();
-Movie.getRecommends();
 
 
-function foo(elem) {
-    var a = document.getElementsByTagName('p')
-    for (i = 0; i < a.length; i++) {
-        a[i].classList.remove('selected');
-    }
-    elem.classList.add('selected');
-    // Movie.getPopular();
+
+
+
+function next_page_details(id){
+    console.log(id);
+    localStorage.setItem('id', id);
 }
-function foo1(elem) {
-    var a = document.getElementsByTagName('h4')
-    for (i = 0; i < a.length; i++) {
-        a[i].classList.remove('selected');
+function next_prev(elem, teg){
+    var a = document.getElementsByTagName(teg);
+    if(teg === 'h3'){
+        for (i = 0; i < a.length; i++) {
+            a[i].classList.remove('select');
+        }
+        elem.classList.add('select');
     }
-    elem.classList.add('selected');
-}
-function foo2(elem) {
-    var a = document.getElementsByTagName('h3')
-    for (i = 0; i < a.length; i++) {
-        a[i].classList.remove('select');
-    }
-    elem.classList.add('select');
-}
-function foo3(elem) {
-    var a = document.getElementsByTagName('span')
-    for (i = 0; i < a.length; i++) {
-        a[i].classList.remove('selected');
-    }
-    elem.classList.add('selected');
+   else{
+        for (i = 0; i < a.length; i++) {
+            a[i].classList.remove('selected');
+        }
+        elem.classList.add('selected');
+   }
 }
