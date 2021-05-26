@@ -41,7 +41,7 @@ fetch(nowPlaying)
 .then(data =>{
     const {results} = data;
     results.forEach((result) =>{
-        console.log(" RSSED",result)
+        // console.log(" RSSED",result)
         document.querySelector('.actor-group').innerHTML+=`
             <div class="backImg">
                 <img src="https://image.tmdb.org/t/p/w500/t/p/w1920_and_h427_multi_faces/${result.backdrop_path}" alt="">
@@ -71,8 +71,8 @@ function next_image(){
 fetch(getPopular)
 .then(res => res.json())
 .then(popular =>{
-            const {results} = popular;
-            results.map((result) =>{
+    const {results} = popular;
+    results.map((result) =>{
                 document.querySelector('.column-cards').innerHTML +=(`
                 <div class="card" onclick="next_page_details(${result.id})">
                 <a href="./movie_click/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
@@ -82,7 +82,6 @@ fetch(getPopular)
                 <h3><a href="./movie_click/index.html">${result.title}</a></h3>
                 <p>${result.release_date}</p>
                 <li class="dod_menu">
-                    <span><img class="card_dod" id="dod"  src="./img/threedod.svg" alt=""></span>
                     <ul class="card_menu" id="card_menu">
                         <li class="dod_item">
                             <i class="fas fa-bars"></i>
@@ -101,9 +100,10 @@ fetch(getPopular)
                             <a class="dod_link">Your rating</a>
                         </li>
                     </ul>
+                    <img class="card_dod" onclick="btnHandler(event)"  src="./img/threedod.svg" alt="">
                 </li>
             </div>
-            `)})
+    `)})
 })
 .catch(err => console.log(err));
 
@@ -123,8 +123,7 @@ document.querySelector('.column-cards-1').innerHTML +=(`
   </div>
   <h3><a href="./movie_click/index.html">${result.title}</a></h3>
   <p>${result.release_date}</p>
-  <li class="dod_menu">
-        <span><img class="card_dod" id="dod"  src="./img/threedod.svg" alt=""></span>
+    <li class="dod_menu">
         <ul class="card_menu" id="card_menu">
             <li class="dod_item">
                 <i class="fas fa-bars"></i>
@@ -143,6 +142,7 @@ document.querySelector('.column-cards-1').innerHTML +=(`
                 <a class="dod_link">Your rating</a>
             </li>
         </ul>
+        <img class="card_dod" onclick="btnHandler(event)"  src="./img/threedod.svg" alt="">
     </li>
 </div>
 `)
@@ -150,13 +150,16 @@ document.querySelector('.column-cards-1').innerHTML +=(`
 })
 .catch(err => console.log(err));
 
-next_page_details_2
+function btnHandler(event){
+    event.target.parentElement.firstElementChild.classList.toggle("toggle");
+}
+
+
 fetch(recommends)
 .then(res => res.json())
 .then(popular =>{
-            const {results} = popular;
-            results.map((result,index) =>{
-                console.log(result.id);
+    const {results} = popular;
+    results.map((result,index) =>{
                 document.querySelector('.column-cards-2').innerHTML +=(`
                 <div class="card" onclick="next_page_details(${result.id})">
                 <a href="./movie_click/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
@@ -165,8 +168,7 @@ fetch(recommends)
                 </div>
                 <h3><a href="./movie_click/index.html">${result.title}</a></h3>
                 <p>${result.release_date}</p>
-                <li class="dod_menu" id="dod_menu">
-                    <span><img class="card_dod"  id="dod"  src="./img/threedod.svg" alt=""></span>
+                <li class="dod_menu">
                     <ul class="card_menu" id="card_menu">
                         <li class="dod_item">
                             <i class="fas fa-bars"></i>
@@ -185,21 +187,22 @@ fetch(recommends)
                             <a class="dod_link">Your rating</a>
                         </li>
                     </ul>
-                </li>
+        <img class="card_dod" onclick="btnHandler(event)"  src="./img/threedod.svg" alt="">
+    </li>
             </div>
-            `)
-            })
+    `)
+    })
 })
 .catch(err => console.log(err));
 
 
 
-
-
 function next_page_details(id){
-    console.log(id);
-    localStorage.setItem('id', id);
+    // console.log(id);
+    localStorage.setItem('movie_id', id);
 }
+
+
 function next_prev(elem, teg){
     var a = document.getElementsByTagName(teg);
     if(teg === 'h3'){

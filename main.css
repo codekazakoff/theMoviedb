@@ -326,6 +326,9 @@ form{
     border: 1px solid #cdcdcd;
     display : none; 
 }
+.toggle{
+    display:block;
+}
 .card_menu li{
     display: flex;
     justify-content: space-between;

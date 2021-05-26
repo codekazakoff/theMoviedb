@@ -1,3 +1,4 @@
+
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
@@ -8,18 +9,20 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
-const one_moveiId = JSON.parse(localStorage.getItem("id"));
-const adi = "804435";
+const one_moveiId = JSON.parse(localStorage.getItem("movie_id"));
 const details = `https://api.themoviedb.org/3/movie/${one_moveiId}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`
-const getUpcomming = 'https://api.themoviedb.org/3/movie/upcoming?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
+const getUpcomming = `https://api.themoviedb.org/3/movie/${one_moveiId}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1`;
 const recommends = `https://api.themoviedb.org/3/movie/${one_moveiId}/recommendations?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1`;
+const personImage = `https://api.themoviedb.org/3/person/53?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`;
+const popular = 'https://api.themoviedb.org/3/person/popular?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
+
+
+
 
 
 fetch(details)
 .then(res => res.json())
 .then(data => {
-    // localStorage.setItem("person_details_id", data.production_companies[1].id);
-    // console.log(data);
   document.querySelector('.details-back-img').innerHTML =
 `
         <div class="costum_bg">   
@@ -135,20 +138,10 @@ fetch(details)
     `   
 })
 
-
-
-
-
-
-
-const popular = 'https://api.themoviedb.org/3/person/popular?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
-const personImage = `https://api.themoviedb.org/3/person/53?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`;
-// fetch(personImage)
+// fetch(getUpcomming)
 // .then(res => res.json())
 // .then(data => console.log(data));
 
-// const peopleImagePerson = JSON.parse(localStorage.getItem('person_details_id'))
-const ii = 'https://api.themoviedb.org/3/person/1901875?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US';
 fetch(popular)
 .then( res => res.json())
 .then(data =>{
@@ -166,23 +159,24 @@ fetch(popular)
 `
 })
 })
-const one_moveiId_2 = JSON.parse(localStorage.getItem("person_details_id"));
-const recommend = `https://api.themoviedb.org/3/movie/${one_moveiId_2}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`;
-fetch(recommend)
-.then(res => res.json())
-.then(data => console.log(data));
+
+
+
+
+// fetch(recommend)
+// .then(res => res.json())
+// .then(data => console.log(data));
 
 fetch(recommends)
 .then(res => res.json())
 .then(data => {
     const {results} = data;
-    results.forEach(result => {
+    results.map((result) => {
+        console.log(result.id);
       document.querySelector('.card-tag-line').innerHTML += `
-        <div class="card-little card-tag-lineer card-bottom">
+        <div class="card-little card-tag-lineer card-bottom" onclick="next_page_details(${result.id})">
           <div class="img___card">
-              <a href="#"../movie_click/index.html>
-              <img src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" onclick="next_page_details_2(${result.id})" alt="">
-              </a>
+              <img src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="">
           </div>
           <p> 
               <span>${result.title}</span>
@@ -193,7 +187,6 @@ fetch(recommends)
     })
 });
 
-function next_page_details_2(id_img){
-    console.log(id_img);
-    localStorage.setItem('person_details_id', id_img);
+function next_page_details(id){
+    console.log(id);
 }
