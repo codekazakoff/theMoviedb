@@ -113,7 +113,6 @@ fetch(details)
 fetch(details)
 .then(res=> res.json())
 .then(data => {
-    // console.log(data)
         document.querySelector('.card__scroller').innerHTML+= `
         <div class="shadow">
             <div class="card-line-1 scroller">
@@ -172,7 +171,6 @@ fetch(recommends)
 .then(data => {
     const {results} = data;
     results.map((result) => {
-        console.log(result.id);
       document.querySelector('.card-tag-line').innerHTML += `
         <div class="card-little card-tag-lineer card-bottom" onclick="next_page_details(${result.id})">
           <div class="img___card">

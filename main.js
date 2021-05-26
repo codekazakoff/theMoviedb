@@ -41,30 +41,27 @@ fetch(nowPlaying)
 .then(data =>{
     const {results} = data;
     results.forEach((result) =>{
-        // console.log(" RSSED",result)
         document.querySelector('.actor-group').innerHTML+=`
-            <div class="backImg">
-                <img src="https://image.tmdb.org/t/p/w500/t/p/w1920_and_h427_multi_faces/${result.backdrop_path}" alt="">
-            </div>
-            <div class="actor-card" onclick="next_page_details(${result.id})">
-                <div class="actor-box-mg">
-                    <a href="./movie_click/index.html">
-                        <img onmousemove="next_image()" src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="Not found Img">
-                    </a>
-                    <i class="fas fa-play"></i>
-                </div>
-                <div class="d-flex">
-                    <h3><a href="#">${result.title}</a></h3>
-                    <p>${result.original_title}</p>
-                </div>
-            </div>
+                <div class="actor-card" onclick="next_page_details(${result.id})">
+                    <div class="actor-box-mg">
+                        <a href="./movie_click/index.html">
+                            <img onmouseover="move_mouse('${result.backdrop_path}')" src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="Not found Img">
+                        </a>
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="d-flex">
+                        <h3><a href="#">${result.title}</a></h3>
+                        <p>${result.original_title}</p>
+                    </div>
+                </div> 
         `
     })
 })
 .catch(err => console.log(err));
 
-function next_image(){
-    
+function move_mouse(back_path){
+    const imgId = document.getElementById('img_back_images');
+    imgId.src = `https://image.tmdb.org/t/p/w500/t/p/w1920_and_h427_multi_faces/${back_path}`;
 }
 
 
@@ -150,6 +147,7 @@ document.querySelector('.column-cards-1').innerHTML +=(`
 })
 .catch(err => console.log(err));
 
+
 function btnHandler(event){
     event.target.parentElement.firstElementChild.classList.toggle("toggle");
 }
@@ -198,9 +196,10 @@ fetch(recommends)
 
 
 function next_page_details(id){
-    // console.log(id);
     localStorage.setItem('movie_id', id);
 }
+
+
 
 
 function next_prev(elem, teg){
@@ -218,3 +217,9 @@ function next_prev(elem, teg){
         elem.classList.add('selected');
    }
 }
+const form = document.getElementById('form');
+form.addEventListener("submit", ()=>{
+    let input = document.getElementById('serch-input').value;
+    localStorage.setItem('input-search-value', input);
+    input.value = '';
+})

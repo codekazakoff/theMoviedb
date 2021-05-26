@@ -95,12 +95,12 @@
                     <h2>Welcome</h2>
                     <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
                 </div>
-                <div class="search">
-                    <form action="/search" method="get">
-                        <input type="search" class="search-input"  placeholder="Search for a movie, tv show, person......">
-                        <input type="submit"  class="search-btn" value="Search">
-                    </form>
-                </div>
+                    <div class="search">
+                        <form id="form" action="/search" method="">
+                            <input id="serch-input" type="search" class="search-input"  placeholder="Search for a movie, tv show, person......">
+                            <input id="serch-btn" type="submit"  class="search-btn" value="Search">
+                        </form>
+                    </div>
             </div>
         </section>
         <section class="column">
@@ -126,7 +126,9 @@
                 </div>
             </div>
             <div class="shadow">
-              <div class="column-cards-1 scroller"></div>  
+              <div class="column-cards-1 scroller">
+
+              </div>  
             </div>
         </section>      
         <section class="column-3 ">
@@ -142,9 +144,9 @@
                     </div>
                     <div class="column-header-top">
                         <div class="actor-group scroller">
-                            <!-- <div class="backImg">
-                                <img src="./img/IMH/BACK-1.jpg" alt="">
-                            </div> -->
+                            <div class="backImg">
+                                <img id="img_back_images" src="https://image.tmdb.org/t/p/w500/t/p/w1920_and_h427_multi_faces/iDdpiUnCeXvBmrkBFpL6lKsZt33.jpg" alt="">
+                           </div>
                         </div>
                     </div>
             </div>
@@ -305,8 +307,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+        </div></section>
         <section class="footer">
             <div class="footer-container">
                 <div class="footer-first">
@@ -353,10 +354,7 @@
         </section>
         <div class="ffotrrr"></div>
     </main>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <script src="./main.js"></script>
 </body>
 </html>

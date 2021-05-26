@@ -125,7 +125,7 @@
 }
 .background-image{
     background-image: linear-gradient(to right,rgb(3,37,65,0.8) 0%,rgba(3,37,65,0) 100%),url('./img/back-1.jpg');
-    min-height: 300px;
+    min-height: 364px;
     height: calc(100vh / 2.5);
     max-height: 360px;
     background-position: top center;
