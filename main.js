@@ -196,7 +196,7 @@ fetch(recommends)
 
 
 function next_page_details(id){
-    localStorage.setItem('movie_id', id);
+    localStorage.setItem('id_movie', id);
 }
 
 

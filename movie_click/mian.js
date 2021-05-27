@@ -9,13 +9,14 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
-const one_moveiId = JSON.parse(localStorage.getItem("movie_id"));
+const one_moveiId = JSON.parse(localStorage.getItem("id_movie"));
 const details = `https://api.themoviedb.org/3/movie/${one_moveiId}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`
 const getUpcomming = `https://api.themoviedb.org/3/movie/${one_moveiId}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1`;
 const recommends = `https://api.themoviedb.org/3/movie/${one_moveiId}/recommendations?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1`;
 const personImage = `https://api.themoviedb.org/3/person/53?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`;
 const popular = 'https://api.themoviedb.org/3/person/popular?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
 
+const personImginMovie = ''
 
 
 
@@ -137,14 +138,10 @@ fetch(details)
     `   
 })
 
-// fetch(getUpcomming)
-// .then(res => res.json())
-// .then(data => console.log(data));
 
 fetch(popular)
 .then( res => res.json())
 .then(data =>{
-    // console.log(data);
     const {results} = data;
     results.forEach((result,index) => {
     document.querySelector('.card-line').innerHTML += `  
@@ -172,9 +169,11 @@ fetch(recommends)
     const {results} = data;
     results.map((result) => {
       document.querySelector('.card-tag-line').innerHTML += `
-        <div class="card-little card-tag-lineer card-bottom" onclick="next_page_details(${result.id})">
+        <div class="card-little card-tag-lineer card-bottom" onclick="localStorage.setItem('id_movie', ${result.id})">
           <div class="img___card">
-              <img src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="">
+            <a href="./index.html"> 
+                <img src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="">
+            </a>
           </div>
           <p> 
               <span>${result.title}</span>
@@ -184,7 +183,3 @@ fetch(recommends)
       `
     })
 });
-
-function next_page_details(id){
-    console.log(id);
-}
