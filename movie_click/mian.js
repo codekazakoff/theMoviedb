@@ -10,13 +10,14 @@ var currentScrollPos = window.pageYOffset;
   prevScrollpos = currentScrollPos;
 }
 const one_moveiId = JSON.parse(localStorage.getItem("id_movie"));
+console.log(one_moveiId);
 const details = `https://api.themoviedb.org/3/movie/${one_moveiId}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`
 const getUpcomming = `https://api.themoviedb.org/3/movie/${one_moveiId}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1`;
 const recommends = `https://api.themoviedb.org/3/movie/${one_moveiId}/recommendations?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1`;
 const personImage = `https://api.themoviedb.org/3/person/53?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`;
 const popular = 'https://api.themoviedb.org/3/person/popular?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
 
-const personImginMovie = ''
+// const personImginMovie = ''
 
 
 
@@ -111,6 +112,47 @@ fetch(details)
         </div>`
 });
 
+
+
+let temp  = [];
+fetch(details)
+.then(res => res.json())
+.then(data => {
+    const {genres} = data;
+    for(let i = 0 ; i < genres.length; i++){
+        temp.push(genres[i].id);
+        // console.log(genres[i])
+    }
+});
+// console.log(temp);
+// localStorage.setItem('person_id', JSON.stringify(temp));
+temp.map(item => item);
+
+const personImageThrowId = 'https://api.themoviedb.org/3/person/878?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US';
+
+// fetch(personImageThrowId)
+// .then(res => res.json())
+// .then(data => console.log(data))
+
+fetch(popular)
+.then( res => res.json())
+.then(data =>{
+    const {results} = data;
+    results.forEach((result,index) => {
+    document.querySelector('.card-line').innerHTML += `  
+    <div class="card-little">
+      <div class="img-card">
+          <img src="https://image.tmdb.org/t/p/w500${result.profile_path}" alt="">
+      </div>
+      <h4><a href="#">${result.name}</a></h4>
+      <p>${result.known_for_department}</p>
+    </div>      
+`
+})
+})
+
+
+
 fetch(details)
 .then(res=> res.json())
 .then(data => {
@@ -138,23 +180,6 @@ fetch(details)
     `   
 })
 
-
-fetch(popular)
-.then( res => res.json())
-.then(data =>{
-    const {results} = data;
-    results.forEach((result,index) => {
-    document.querySelector('.card-line').innerHTML += `  
-    <div class="card-little">
-      <div class="img-card">
-          <img src="https://image.tmdb.org/t/p/w500${result.profile_path}" alt="">
-      </div>
-      <h4><a href="#">${result.name}</a></h4>
-      <p>${result.known_for_department}</p>
-    </div>      
-`
-})
-})
 
 
 

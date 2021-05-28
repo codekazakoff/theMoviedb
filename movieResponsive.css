@@ -1,0 +1,26 @@
+@media screen  and (max-width:1200px){
+    .container {
+        padding: 0 25px;
+    }
+}
+
+@media screen  and (max-width:1092px){
+    .column-header h2 , .header-line{
+        margin-left: 15px;
+    }
+    .main-line{
+        width:1092px;
+    }
+    .backImg img{
+        width:1022px;
+    }
+    .actor-group{
+        margin-top: -2px;
+    }
+    .column-header .marTop .container{
+        padding-top: 20px;
+    }
+    .actor-group .scroller{
+        height: 313px;
+    }
+}

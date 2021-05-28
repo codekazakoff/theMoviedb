@@ -623,7 +623,7 @@ form{
 }
 .main-line{
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     margin-top: 30px;
 }
@@ -657,18 +657,21 @@ form{
     font-size: 16px;
 }
 .circle-text p .first-color{
-    width:90px;
+    width : 20%;
+    max-width:90px;
     height : 10px;
     border-radius:10px;
     background: linear-gradient(to right, rgba(192,254,207,1) 0%, rgba(30,213,169, 1) 100%);
     margin-right:20px ;
 }
 .circle-text p .second-color{
-    width:390px;
+    width : 350px;
+    max-width:390px;
     height : 10px;
     border-radius:10px;
     background: linear-gradient(to right, rgba(253,193,112,1) 0%, rgba(217,59,99, 1) 100%);
     margin-right:20px ;
+
 }
 .footer{
     margin-top: 40px;
