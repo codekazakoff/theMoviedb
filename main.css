@@ -16,6 +16,7 @@
     width: 100vw;
     z-index: 5555555;
     transition: top 0.2s linear;
+    margin-top: -64px;
 }
 .container{
     width: 100%;
@@ -91,7 +92,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 1px solid blue; */
+}
+.right_after_bars{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu_right .fa-bars{
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
 }
 .language{
     text-decoration: none;
@@ -123,15 +134,18 @@
 .plus{
     margin-left: 0;   
 }
+.fa-plus{
+    display: none !important;
+}
 .background-image{
-    background-image: linear-gradient(to right,rgb(3,37,65,0.8) 0%,rgba(3,37,65,0) 100%),url('./img/back-1.jpg');
-    min-height: 364px;
+    min-height: 300px;
     height: calc(100vh / 2.5);
     max-height: 360px;
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
     color: #fff;
+    margin-top: 64px;
 }
 .inner_content{
     display: flex;
@@ -296,9 +310,7 @@ form{
     border-radius: 8px;
 }
 
-.card img{
-    height:225px;
-}
+
 
 .card li{
     list-style: none;
@@ -312,7 +324,7 @@ form{
     height:28px;
     position: absolute;
     right : 3px;
-    top: -92px;
+    top: 10px;
     cursor: pointer !important;
 }
 
@@ -627,11 +639,14 @@ form{
     align-items: center;
     margin-top: 30px;
 }
-.main-left .circle-card{
+.main-left .circle-card, .main-right .circle-card{
     display: flex;
     justify-content: start;
     align-items: center;
     margin-top: 20px;
+}
+.main-right .circle-card{
+    margin-left: 75px;
 }
 .circle-card .circle{
     width: 58px;

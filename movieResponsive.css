@@ -1,26 +1,73 @@
+@media (max-width:1400px){
+    /* body {
+        overflow-x: hidden;
+    } */
+    #navbar{
+        width: 1220px;
+    }
+}
 @media screen  and (max-width:1200px){
     .container {
         padding: 0 25px;
     }
+    .menu {
+        max-width: 1100px;
+    }
+    .selected{
+        margin-left: -1px !important;
+        padding : 12px 24px;
+    }
+    .column-header{
+        padding-top: 25px;
+    }
 }
-
-@media screen  and (max-width:1092px){
-    .column-header h2 , .header-line{
-        margin-left: 15px;
+@media screen and (max-width: 990px){
+    .menu_right .fa-bars{
+        display:block;
     }
-    .main-line{
-        width:1092px;
+    .menu_little{
+        display: none;
     }
-    .backImg img{
-        width:1022px;
+    .right_after_bars{
+        display: none;
     }
-    .actor-group{
-        margin-top: -2px;
+    #navbar{
+        position: relative;
     }
-    .column-header .marTop .container{
-        padding-top: 20px;
+    .toggle{
+        display:block;
     }
-    .actor-group .scroller{
-        height: 313px;
+    .menu_little{
+        background-color : #032541;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        height : 250px;
+        width : 100%;
+        width: 100%;
+        z-index: 88;
+    } 
+    .menu_little .right{
+        margin-right: 35px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center
+    }
+    .menu_little .menu-item{
+        padding: 15px 0;
+    }
+    .menu_little_{
+        left: 17.5%;
+        z-index: 55555;
+        top: 5%;
+        box-shadow: 0 1px 10px rgba(0,0,0, 0.2);
+    }
+    .menu-item .menu-link{
+        font-size: 24px;
+        padding-left: 25px;
+        color: #fff;
+    }
+    body{
+        overflow-x: hidden;
     }
 }

@@ -109,26 +109,22 @@ fetch(details)
                     </div>
                 </div>
             </div>
-        </div>`
+</div>`
 });
 
 
 
-let temp  = [];
 fetch(details)
 .then(res => res.json())
 .then(data => {
     const {genres} = data;
-    for(let i = 0 ; i < genres.length; i++){
-        temp.push(genres[i].id);
-        // console.log(genres[i])
-    }
+    const ids = genres.reduce((sum,item) => [...sum, item.id], []);
+    localStorage.setItem('idPerson',JSON.stringify(ids));
 });
-// console.log(temp);
-// localStorage.setItem('person_id', JSON.stringify(temp));
-temp.map(item => item);
 
-const personImageThrowId = 'https://api.themoviedb.org/3/person/878?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US';
+const personId = localStorage.getItem('idPerson');
+
+const personImageThrowId = `https://api.themoviedb.org/3/person/${personId}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`;
 
 // fetch(personImageThrowId)
 // .then(res => res.json())

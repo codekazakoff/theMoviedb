@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="./movieResponsive.css">
+    <!-- <link rel="stylesheet" href="./movieResponsive.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     <title>Movies</title>
 </head>
@@ -80,29 +80,21 @@
                             </ul>
                 </div>
                 <div class="menu_right">
-                        <img class="left plus"  src="./img/plus.svg" alt="" >
-                        <a  class="left language" href="#" >EN</a>
-                        <a  class="left login"  href="./login_Page/index.html">Login</a>
-                        <a  class="left text"  href="#">Join TMDb</a>
-                        <img class="left"  src="./img/search.svg" alt="search">
+                        <i class="fas fa-bars" onclick="bars_click()"></i>
+                        <div class="right_after_bars">
+                            <img class="left plus ikki"  src="./img/plus.svg" alt="" >
+                            <a  class="left language" href="#" >EN</a>
+                            <a  class="left login"  href="./login_Page/index.html">Login</a>
+                            <a  class="left text"  href="#">Join TMDb</a>
+                            <img class="left search-icon"  src="./img/search.svg" alt="search">
+                        </div>
                 </div>
            </div>
        </div>
     </header>
-    <main id="main">
-        <section class="background-image inner_content">
-            <div class="wrapper container">
-                <div class="title">
-                    <h2>Welcome</h2>
-                    <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
-                </div>
-                    <div class="search">
-                        <form id="form" action="/search" method="">
-                            <input id="serch-input" type="search" class="search-input"  placeholder="Search for a movie, tv show, person......">
-                            <input id="serch-btn" type="submit"  class="search-btn" value="Search">
-                        </form>
-                    </div>
-            </div>
+   <main id="main"> 
+        <section class="back-imgg">
+            
         </section>
         <section class="column">
             <div class="column-header container">
@@ -189,7 +181,7 @@
 
             </div>
         </section>
-        <!-- <section class="col-12 container">    
+       <section class="col-12 container">     
             <div class="header-line">
                 <h4>Leaderboard</h4>
                 <div class="mt-5">
@@ -256,7 +248,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="main-left">
+                <div class="main-right">
                     <div class="circle-card">
                         <div class="circle">
                             <img src="./img/10.jpg" alt="">
@@ -308,8 +300,8 @@
                         </div>
                     </div>
                 </div>
-        </div></section> -->
-        <section class="footer">
+        </div></section> 
+        <section class="footer"> 
             <div class="footer-container">
                 <div class="footer-first">
                    <div class="images"> <img src="./img/foote-logo.svg" alt=""></div>
@@ -353,8 +345,7 @@
                 </div>
             </div>
         </section>
-        <div class="ffotrrr"></div>
-    </main>
+    </main> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./main.js"></script>
 </body>
