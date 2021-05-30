@@ -1,115 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet"/>
+    <title>Movies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="main.css">
     <!-- <link rel="stylesheet" href="./movieResponsive.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
-    <title>Movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
 </head>
+
 <body>
-    
+
+    <div id="preloader">
+        <div class="dws-progress-bar"></div>
+    </div>
+
     <header id='navbar'>
-       <div class="container">
-           <div class="menu">
+        <div class="container">
+            <div class="menu">
                 <div class="menu_left">
                     <a href="./index.html"> <img src="./img/logo.svg" alt="T M D B"></a>
-                            <ul class="menu_little">
-                                <li class="menu-item">
-                                    <a href="#" class="menu-link">Movies</a>
-                                    <ul class="menu_little_">
-                                        <li class="menu-item_">
-                                            <a href="#">Popular</a>
-                                        </li>
-                                        <li class="menu-item_">
-                                            <a href="#">Now Playing</a>
-                                        </li>
-                                        <li class="menu-item_">
-                                            <a href="#">Upcoming</a>
-                                        </li>
-                                        <li class="menu-item_ padding">
-                                            <a href="#">Top Rated</a>
-                                        </li>
-                                    </ul>
+                    <ul class="menu_little">
+                        <li class="menu-item">
+                            <a href="#" class="menu-link">Movies</a>
+                            <ul class="menu_little_">
+                                <li class="menu-item_">
+                                    <a href="#">Popular</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="#" class="menu-link">TV Shows</a>
-                                    <ul class="menu_little_">
-                                        <li class="menu-item_">
-                                            <a href="#">Popular</a>
-                                        </li>
-                                        <li class="menu-item_">
-                                            <a href="#">Airing Today</a>
-                                        </li>
-                                        <li class="menu-item_">
-                                            <a href="#">On TV</a>
-                                        </li>
-                                        <li class="menu-item_ padding">
-                                            <a href="#">Top Rated</a>
-                                        </li>
-                                    </ul>
+                                <li class="menu-item_">
+                                    <a href="#">Now Playing</a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="#" class="menu-link">People</a>
-                                    <ul class="menu_little_">
-                                        <li class="menu-item_ padding width">
-                                            <a href="#">Popular People</a>
-                                        </li>
-                                    </ul>
+                                <li class="menu-item_">
+                                    <a href="#">Upcoming</a>
                                 </li>
-                                <li class="menu-item right">
-                                    <a href="#" class="menu-link">More</a>
-                                    <ul class="menu_little_">
-                                        <li class="menu-item_">
-                                            <a href="#">Disscussions</a>
-                                        </li>
-                                        <li class="menu-item_">
-                                            <a href="#">Leaderboard</a>
-                                        </li>
-                                        <li class="menu-item_">
-                                            <a href="#">Support</a>
-                                        </li>
-                                        <li class="menu-item_ padding">
-                                            <a href="#">API</a>
-                                        </li>
-                                    </ul>
+                                <li class="menu-item_ padding">
+                                    <a href="#">Top Rated</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link">TV Shows</a>
+                            <ul class="menu_little_">
+                                <li class="menu-item_">
+                                    <a href="#">Popular</a>
+                                </li>
+                                <li class="menu-item_">
+                                    <a href="#">Airing Today</a>
+                                </li>
+                                <li class="menu-item_">
+                                    <a href="#">On TV</a>
+                                </li>
+                                <li class="menu-item_ padding">
+                                    <a href="#">Top Rated</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link">People</a>
+                            <ul class="menu_little_">
+                                <li class="menu-item_ padding width">
+                                    <a href="#">Popular People</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item right">
+                            <a href="#" class="menu-link">More</a>
+                            <ul class="menu_little_">
+                                <li class="menu-item_">
+                                    <a href="#">Disscussions</a>
+                                </li>
+                                <li class="menu-item_">
+                                    <a href="#">Leaderboard</a>
+                                </li>
+                                <li class="menu-item_">
+                                    <a href="#">Support</a>
+                                </li>
+                                <li class="menu-item_ padding">
+                                    <a href="#">API</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
                 <div class="menu_right">
-                        <i class="fas fa-bars" onclick="bars_click()"></i>
-                        <div class="right_after_bars">
-                            <img class="left plus ikki"  src="./img/plus.svg" alt="" >
-                            <a  class="left language" href="#" >EN</a>
-                            <a  class="left login"  href="./login_Page/index.html">Login</a>
-                            <a  class="left text"  href="#">Join TMDb</a>
-                            <img class="left search-icon"  src="./img/search.svg" alt="search">
-                        </div>
+                    <i class="fas fa-bars" onclick="bars_click()"></i>
+                    <div class="right_after_bars">
+                        <img class="left plus ikki" src="./img/plus.svg" alt="">
+                        <a class="left language" href="#">EN</a>
+                        <a class="left login" href="./login_Page/index.html">Login</a>
+                        <a class="left text" href="#">Join TMDb</a>
+                        <img class="left search-icon" src="./img/search.svg" alt="search">
+                    </div>
                 </div>
-           </div>
-       </div>
+            </div>
+        </div>
     </header>
-   <main id="main"> 
+    <main id="main">
         <section class="back-imgg">
-            
+
         </section>
         <section class="column">
             <div class="column-header container">
                 <h2>What's Popular</h2>
                 <div class="selector_wrap">
                     <p id="stream" onclick="next_prev(this,'p')" class="anchor selected">Streaming</a>
-                    <p id="onTv" onclick="next_prev(this,'p')" class="anchor ">on TV</a>
-                    <p id="forRent" onclick="next_prev(this,'p')" class="anchor ">For Rent</a>
-                    <p id="inTheatres" onclick="next_prev(this,'p')" class="anchor ">In Theaters</a>
+                        <p id="onTv" onclick="next_prev(this,'p')" class="anchor ">on TV</a>
+                            <p id="forRent" onclick="next_prev(this,'p')" class="anchor ">For Rent</a>
+                                <p id="inTheatres" onclick="next_prev(this,'p')" class="anchor ">In Theaters</a>
                 </div>
             </div>
             <div class="shadow">
-              <div class="column-cards scroller"></div>  
+                <div class="column-cards scroller"></div>
             </div>
-        </section>  
+        </section>
         <section class="column">
             <div class="column-header container">
                 <h2>Free To Watch</h2>
@@ -119,29 +125,31 @@
                 </div>
             </div>
             <div class="shadow">
-              <div class="column-cards-1 scroller">
+                <div class="column-cards-1 scroller">
 
-              </div>  
+                </div>
             </div>
-        </section>      
+        </section>
         <section class="column-3 ">
             <div class="shadow">
-                    <div class="column-header marTop container">
-                        <h2>Latest Trailers</h2>
-                        <div class="selector_wrap border">
-                            <h3 onclick="next_prev(this,'h3')" class="anchor color select">Streaming</h3>
-                            <h3 onclick="next_prev(this,'h3')" class="anchor color ">on TV</h3>
-                            <h3 onclick="next_prev(this,'h3')" class="anchor color ">For Rent</h3>
-                            <h3 onclick="next_prev(this,'h3')" class="anchor color ">In Theaters</h3>
+                <div class="column-header marTop container">
+                    <h2>Latest Trailers</h2>
+                    <div class="selector_wrap border">
+                        <h3 onclick="next_prev(this,'h3')" class="anchor color select">Streaming</h3>
+                        <h3 onclick="next_prev(this,'h3')" class="anchor color ">on TV</h3>
+                        <h3 onclick="next_prev(this,'h3')" class="anchor color ">For Rent</h3>
+                        <h3 onclick="next_prev(this,'h3')" class="anchor color ">In Theaters</h3>
+                    </div>
+                </div>
+                <div class="column-header-top">
+                    <div class="actor-group scroller">
+                        <div class="backImg">
+                            <img id="img_back_images"
+                                src="https://image.tmdb.org/t/p/w500/t/p/w1920_and_h427_multi_faces/iDdpiUnCeXvBmrkBFpL6lKsZt33.jpg"
+                                alt="">
                         </div>
                     </div>
-                    <div class="column-header-top">
-                        <div class="actor-group scroller">
-                            <div class="backImg">
-                                <img id="img_back_images" src="https://image.tmdb.org/t/p/w500/t/p/w1920_and_h427_multi_faces/iDdpiUnCeXvBmrkBFpL6lKsZt33.jpg" alt="">
-                           </div>
-                        </div>
-                    </div>
+                </div>
             </div>
         </section>
         <section class="column mt-3">
@@ -153,35 +161,37 @@
                 </div>
             </div>
             <div class="shadow">
-              <div class="misk"> 
-                  <div class="scroller column-cards-2"></div>
-              </div>
+                <div class="misk">
+                    <div class="scroller column-cards-2"></div>
+                </div>
             </div>
-        </section> 
+        </section>
         <section class="prev-footer-back-img">
             <div class="container prev-footer-text">
-                    <h1>Join Today</h1>
-                    <div class="img-flex-text">
-                        <ul class="btn-and-text">
-                            <p>Get access to maintain your own <i>custom personal lists, track what you've seen </i> and search </p>
-                            <p>and filter for  <i>what to watch next</i> — regardless if it's in theatres, on TV or available on </p>
-                            <p>popular streaming services like Kocowa, DOCSVILLE, Argo, and True Story.</p>
-                            <button class="btn"><a href="./login_Page/index.html">Sign Up</a></button>
-                        </ul>
-                        <ul class="text-menu">
-                            <li>Enjoy TMDb ad free</li>
-                            <li>Maintain a personal watchlist</li>
-                            <li>Filter by your subscribed streaming services and find something</li>
-                            <li>to watch</li>
-                            <li>Log the movies and TV shows you've seen</li>
-                            <li>Build custom lists</li>
-                            <li>Contribute to and improve our database</li>
-                        </ul>
-                    </div>
+                <h1>Join Today</h1>
+                <div class="img-flex-text">
+                    <ul class="btn-and-text">
+                        <p>Get access to maintain your own <i>custom personal lists, track what you've seen </i> and
+                            search </p>
+                        <p>and filter for <i>what to watch next</i> — regardless if it's in theatres, on TV or available
+                            on </p>
+                        <p>popular streaming services like Kocowa, DOCSVILLE, Argo, and True Story.</p>
+                        <button class="btn"><a href="./login_Page/index.html">Sign Up</a></button>
+                    </ul>
+                    <ul class="text-menu">
+                        <li>Enjoy TMDb ad free</li>
+                        <li>Maintain a personal watchlist</li>
+                        <li>Filter by your subscribed streaming services and find something</li>
+                        <li>to watch</li>
+                        <li>Log the movies and TV shows you've seen</li>
+                        <li>Build custom lists</li>
+                        <li>Contribute to and improve our database</li>
+                    </ul>
+                </div>
 
             </div>
         </section>
-       <section class="col-12 container">     
+        <section class="col-12 container">
             <div class="header-line">
                 <h4>Leaderboard</h4>
                 <div class="mt-5">
@@ -226,7 +236,7 @@
                             <p> <span class="first-color"></span> 36,7 </p>
                             <p> <span class="second-color"></span> 71,45200 </p>
                         </div>
-                    </div>                
+                    </div>
                     <div class="circle-card">
                         <div class="circle">
                             <img src="./img/3.jpg" alt="">
@@ -278,7 +288,7 @@
                             <p> <span class="first-color"></span> 36,7 </p>
                             <p> <span class="second-color"></span> 71,45200 </p>
                         </div>
-                    </div>                    
+                    </div>
                     <div class="circle-card">
                         <div class="circle">
                             <img src="./img/7.jpg" alt="">
@@ -300,11 +310,12 @@
                         </div>
                     </div>
                 </div>
-        </div></section> 
-        <section class="footer"> 
+            </div>
+        </section>
+        <section class="footer">
             <div class="footer-container">
                 <div class="footer-first">
-                   <div class="images"> <img src="./img/foote-logo.svg" alt=""></div>
+                    <div class="images"> <img src="./img/foote-logo.svg" alt=""></div>
                     <a href="#" class="join">Join the Community</a>
                 </div>
                 <div class="footer-text-menu">
@@ -345,8 +356,11 @@
                 </div>
             </div>
         </section>
-    </main> 
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./plugin.js"></script>
     <script src="./main.js"></script>
 </body>
+
 </html>

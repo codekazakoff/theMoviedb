@@ -125,7 +125,7 @@ fetch(details)
 const personId = localStorage.getItem('idPerson');
 
 const personImageThrowId = `https://api.themoviedb.org/3/person/${personId}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`;
-
+ 
 // fetch(personImageThrowId)
 // .then(res => res.json())
 // .then(data => console.log(data))
@@ -204,3 +204,21 @@ fetch(recommends)
       `
     })
 });
+
+
+
+$(document).ready(()=>{
+    $('.dws-progress-bar').circularProgress({
+        color: '#ff5252',
+        line_width : 18,
+        height : '350px',
+        width : '350px',
+        percent : 0,
+        starting_position : 25
+    }).circularProgress('animate',100,1500)
+})
+
+$(window).on('load', ()=>{
+    var $preloader = $('#preloader');
+    $preloader.delay(1500).fadeOut('slow');
+})
