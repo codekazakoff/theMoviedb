@@ -541,7 +541,7 @@ form{
     background-position: bottom;
 }
 .prev-footer-back-img{
-    background-image: url('./img/prev-footer-back-img.jpg');
+    background-image: url('../img/prev-footer-back-img.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height:280px;

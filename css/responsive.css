@@ -3,7 +3,7 @@
         overflow-x: hidden;
     } */
     #navbar{
-        width: 1220px;
+        width: 100%;
     }
 }
 @media screen  and (max-width:1200px){
