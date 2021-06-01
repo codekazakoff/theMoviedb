@@ -157,23 +157,12 @@
 }
 .input-search input{
     width : 100%;
-    padding : 10px 0;
+    padding : 10px 30px 10px 0;
     font-size: 16px;
     font-style: italic;
     border: none;
     outline: none;
     color: #727272;
-}
-.input-search .fa-times{
-    position: absolute;
-    right : 5px; 
-    top: 11px;
-    font-size: 16px;
-    color: #727272;
-    display: none;
-}
-.input-search:active .fa-times{
-    display: block;
 }
 .sub-media{
     width : 1279px;

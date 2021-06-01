@@ -1,7 +1,4 @@
 import {DETAILS,RECOMMENDS,POPULAR} from '../../js/const.js';
-
-
-
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
@@ -12,12 +9,11 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
-
-fetch(DETAILS)
-.then(res => res.json())
-.then(data => {
-  document.querySelector('.details-back-img').innerHTML =
-`
+const getFetch_details_one = async url => {
+   try{
+    const res = await fetch(url);
+    const data = await res.json();
+    document.querySelector('.details-back-img').innerHTML =`
         <div class="costum_bg">   
             <div class="bac-Img"  style="background-image : linear-gradient(to bottom right, rgba(7.84%, 9.41%, 7.84%, 1.00), rgba(7.84%, 9.41%, 7.84%, 0.84)),url(https://image.tmdb.org/t/p/w500/t/p/w1920_and_h800_multi_faces/${data.backdrop_path})">
                 <div class="container CArd">
@@ -100,13 +96,15 @@ fetch(DETAILS)
                     </div>
                 </div>
             </div>
-</div>`
-});
-
-
-fetch(POPULAR)
-.then( res => res.json())
-.then(data =>{
+    </div>`
+   }catch(err){
+       console.log(err);
+   }
+}
+const getFetch_Popular = async url => {
+    try{
+        const res = await fetch(url);
+    const data = await res.json();
     const {results} = data;
     results.forEach((result,index) => {
     document.querySelector('.card-line').innerHTML += `  
@@ -117,15 +115,14 @@ fetch(POPULAR)
       <h4><a href="#">${result.name}</a></h4>
       <p>${result.known_for_department}</p>
     </div>      
-`
-})
-})
-
-
-
-fetch(DETAILS)
-.then(res=> res.json())
-.then(data => {
+    `
+    })
+    }catch(err) {console.log(err)}
+}
+const getFetch_Details_two = async url => {
+    try{
+        const res = await fetch(url);
+        const data = await res.json();
         document.querySelector('.card__scroller').innerHTML+= `
         <div class="shadow">
             <div class="card-line-1 scroller">
@@ -147,36 +144,39 @@ fetch(DETAILS)
                 </div>
             </div>
         </div>
-    `   
-})
-
-
-
-
-
-
-fetch(RECOMMENDS)
-.then(res => res.json())
-.then(data => {
-    const {results} = data;
-    results.map((result) => {
-      document.querySelector('.card-tag-line').innerHTML += `
-        <div class="card-little card-tag-lineer card-bottom" onclick="localStorage.setItem('id_movie', ${result.id})">
-          <div class="img___card">
-            <a href="./index.html"> 
-                <img src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="">
-            </a>
-          </div>
-          <p> 
-              <span>${result.title}</span>
-              <span>${Math.floor(result.vote_average) * 10}%</span>
-          </p>
-        </div>
-      `
-    })
-});
-
-
+        `
+    }catch(err) {
+        console.log(err);
+    }
+}
+const getFetch_recommends = async url => {
+   try{
+        const res = await fetch(url);
+        const data = await res.json();
+        const {results} = data;
+        results.map((result) => {
+        document.querySelector('.card-tag-line').innerHTML += `
+            <div class="card-little card-tag-lineer card-bottom" onclick="localStorage.setItem('id_movie', ${result.id})">
+            <div class="img___card">
+                <a href="./index.html"> 
+                    <img src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="">
+                </a>
+            </div>
+            <p> 
+                <span>${result.title}</span>
+                <span>${Math.floor(result.vote_average) * 10}%</span>
+            </p>
+            </div>
+        `
+        })
+   }catch(err) {
+       console.log(err);
+   }
+}
+getFetch_details_one(DETAILS);
+getFetch_Popular(POPULAR)
+getFetch_Details_two(DETAILS);
+getFetch_recommends(RECOMMENDS);
 
 $(document).ready(()=>{
     $('.dws-progress-bar').circularProgress({
@@ -188,7 +188,6 @@ $(document).ready(()=>{
         starting_position : 25
     }).circularProgress('animate',100,1500)
 })
-
 $(window).on('load', ()=>{
     var $preloader = $('#preloader');
     $preloader.delay(1500).fadeOut('slow');

@@ -6,4 +6,5 @@ export const POPULAR =  `https://api.themoviedb.org/3/person/popular?api_key=${A
 export const NOW_PLAYING = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`;
 export const GET_POPULAR = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
 export const GET_UP_COMING = `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`;
-
+export const SEARCH_INPUT_VALUE = (localStorage.getItem("input-search-value"));
+export const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&query=${SEARCH_INPUT_VALUE}&page=1&include_adult=false`;
