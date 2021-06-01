@@ -215,5 +215,3 @@
 
 }( jQuery ));
 
-
-console.log("qalisan")

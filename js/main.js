@@ -1,42 +1,21 @@
-// {var prevScrollpos = window.pageYOffset;
-//    window.onscroll = function() {
-//    var currentScrollPos = window.pageYOffset;
-//    if (prevScrollpos > currentScrollPos) {
-//     document.getElementById("navbar").style.top = "0";
-//    } else {
-//     document.getElementById("navbar").style.top = "-70px";
-//    }
-//    prevScrollpos = currentScrollPos;
-// }}
+{var prevScrollpos = window.pageYOffset;
+   window.onscroll = function() {
+   var currentScrollPos = window.pageYOffset;
+   if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "64px";
+   } else {
+    document.getElementById("navbar").style.top = "64px";
+   }
+   prevScrollpos = currentScrollPos;
+}}
 
 const apiKey = '8a6efddbf519aa74be6e68f9ecfd443f';
-const search = 'https://api.themoviedb.org/3/search/movie?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&query=Mortal%20Kombat&page=1&include_adult=false'
-const trending = 'https://api.themoviedb.org/3/trending/movie/day?api_key=8a6efddbf519aa74be6e68f9ecfd443f';
-const reviews = 'https://api.themoviedb.org/3/review/726684?api_key=8a6efddbf519aa74be6e68f9ecfd443f';
-const mutikSearch = 'https://api.themoviedb.org/3/search/multi?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&query=Soul&page=1&include_adult=false';
-const serchPeople = 'https://api.themoviedb.org/3/search/person?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&query=Angelina%20Jolie&page=1&include_adult=false';
-const kunfuPanda = 'https://api.themoviedb.org/3/search/tv?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1&query=Kung%20Fu%20Panda&include_adult=false';
-const details = 'https://api.themoviedb.org/3/movie/804435?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US'
-const topVideo = 'https://api.themoviedb.org/3/movie/top_rated?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
-const getUpcomming = 'https://api.themoviedb.org/3/movie/upcoming?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
+const getUpcomming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`;
 const getPopular = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
-const nowPlaying = 'https://api.themoviedb.org/3/movie/now_playing?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
-const Latest = 'https://api.themoviedb.org/3/movie/latest?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US';
-const video = 'http://api.themoviedb.org/3/movie/804435/videos?api_key=https://www.youtube.com/watch?v=O67fpWFoz3w';
-const recommends = 'https://api.themoviedb.org/3/movie/804435/recommendations?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1'
-const getreviews = 'https://api.themoviedb.org/3/movie/804435/reviews?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
-const similiar = 'https://api.themoviedb.org/3/movie/804435/similar?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
-const detData = 'https://api.themoviedb.org/3/movie/804435/release_dates?api_key=8a6efddbf519aa74be6e68f9ecfd443f';
-const lists = 'https://api.themoviedb.org/3/movie/726684/lists?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
-const keywords = 'https://api.themoviedb.org/3/movie/804435/keywords?api_key=8a6efddbf519aa74be6e68f9ecfd443f';
-const extrnalsIDS = 'https://api.themoviedb.org/3/movie/260905/external_ids?api_key=8a6efddbf519aa74be6e68f9ecfd443f';
-const credits = 'https://api.themoviedb.org/3/movie/260905/credits?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US';
-const changes = 'https://api.themoviedb.org/3/movie/804435/changes?api_key=8a6efddbf519aa74be6e68f9ecfd443f&page=1';
-const alternativeTitles = 'https://api.themoviedb.org/3/movie/804435/alternative_titles?api_key=8a6efddbf519aa74be6e68f9ecfd443f';
-const accountState = 'https://api.themoviedb.org/3/movie/804435/account_states?api_key=8a6efddbf519aa74be6e68f9ecfd443f';
-const rated = 'https://api.themoviedb.org/3/movie/top_rated?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
+const nowPlaying = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
+const recommends = `https://api.themoviedb.org/3/movie/804435/recommendations?api_key=${apiKey}&language=en-US&page=1`;
 
-fetch(nowPlaying)
+fetch(nowPlaying)  
 .then(res => res.json())
 .then(data => {
     const {results} = data;
@@ -178,11 +157,6 @@ fetch(getUpcomming)
 .catch(err => console.log(err));
 
 
-function btnHandler(event){
-    event.target.parentElement.firstElementChild.classList.toggle("toggle");
-}
-
-
 fetch(recommends)
 .then(res => res.json())
 .then(popular =>{
@@ -230,6 +204,9 @@ function next_page_details(id){
 }
 
 
+function btnHandler(event){
+    event.target.parentElement.firstElementChild.classList.toggle("toggle");
+}
 
 
 function next_prev(elem, teg){
@@ -262,10 +239,12 @@ $(document).ready(()=>{
         width : '350px',
         percent : 0,
         starting_position : 25
-    }).circularProgress('animate',100,2000)
+    }).circularProgress('animate',100,2000);
+    // document.querySelector('body').classList.add('overflow');
 })
 
 $(window).on('load', ()=>{
     var $preloader = $('#preloader');
     $preloader.delay(2800).fadeOut('slow');
+    
 })

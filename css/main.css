@@ -14,7 +14,7 @@
     position: fixed;
     position: fixed;
     width: 100vw;
-    z-index: 555;
+    z-index: 5555555;
     transition: top 0.2s linear;
     margin-top: -64px;
 }
@@ -925,7 +925,6 @@ form{
 .present::after{
     border-color: #B0C814;
 }
-
 .dws-progress-bar{
     position: absolute;
     top: 50%;
@@ -950,5 +949,9 @@ form{
     top: 0;
     bottom: 0;
     background : rgba(0,0,0,1);
-    z-index: 999;
+    z-index: 9999999999999999999;
 }
+
+.overflow{
+    overflow-y: hidden;
+} 

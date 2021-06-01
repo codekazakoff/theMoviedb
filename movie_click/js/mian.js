@@ -1,3 +1,6 @@
+import {DETAILS,RECOMMENDS,POPULAR} from '../../js/const.js';
+
+
 
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
@@ -9,20 +12,8 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
-const one_moveiId = JSON.parse(localStorage.getItem("id_movie"));
-console.log(one_moveiId);
-const details = `https://api.themoviedb.org/3/movie/${one_moveiId}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`
-const getUpcomming = `https://api.themoviedb.org/3/movie/${one_moveiId}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1`;
-const recommends = `https://api.themoviedb.org/3/movie/${one_moveiId}/recommendations?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1`;
-const personImage = `https://api.themoviedb.org/3/person/53?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`;
-const popular = 'https://api.themoviedb.org/3/person/popular?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US&page=1';
 
-// const personImginMovie = ''
-
-
-
-
-fetch(details)
+fetch(DETAILS)
 .then(res => res.json())
 .then(data => {
   document.querySelector('.details-back-img').innerHTML =
@@ -113,24 +104,7 @@ fetch(details)
 });
 
 
-
-fetch(details)
-.then(res => res.json())
-.then(data => {
-    const {genres} = data;
-    const ids = genres.reduce((sum,item) => [...sum, item.id], []);
-    localStorage.setItem('idPerson',JSON.stringify(ids));
-});
-
-const personId = localStorage.getItem('idPerson');
-
-const personImageThrowId = `https://api.themoviedb.org/3/person/${personId}?api_key=8a6efddbf519aa74be6e68f9ecfd443f&language=en-US`;
- 
-// fetch(personImageThrowId)
-// .then(res => res.json())
-// .then(data => console.log(data))
-
-fetch(popular)
+fetch(POPULAR)
 .then( res => res.json())
 .then(data =>{
     const {results} = data;
@@ -149,7 +123,7 @@ fetch(popular)
 
 
 
-fetch(details)
+fetch(DETAILS)
 .then(res=> res.json())
 .then(data => {
         document.querySelector('.card__scroller').innerHTML+= `
@@ -180,11 +154,8 @@ fetch(details)
 
 
 
-// fetch(recommend)
-// .then(res => res.json())
-// .then(data => console.log(data));
 
-fetch(recommends)
+fetch(RECOMMENDS)
 .then(res => res.json())
 .then(data => {
     const {results} = data;
