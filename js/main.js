@@ -1,3 +1,4 @@
+
 {var prevScrollpos = window.pageYOffset;
    window.onscroll = function() {
    var currentScrollPos = window.pageYOffset;
@@ -10,11 +11,11 @@
 }}
 
 const apiKey = '8a6efddbf519aa74be6e68f9ecfd443f';
+const topRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;
 const getUpcomming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`;
 const getPopular = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
 const nowPlaying = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
 const recommends = `https://api.themoviedb.org/3/movie/804435/recommendations?api_key=${apiKey}&language=en-US&page=1`;
-
 
 const getFetch_nowPlaying_one = async url => {
     try{
@@ -53,7 +54,7 @@ const getFech_nowPLaying_two = async url => {
                     <div class="actor-card" onclick="next_page_details(${result.id})">
                         <div class="actor-box-mg">
                             <a href="./movie_click/index.html">
-                                <img onmouseover="move_mouse('${result.backdrop_path}')" src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="Not found Img">
+                                <img onmousemove="move_mouse('${result.backdrop_path}')" src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="Not found Img">
                             </a>
                             <i class="fas fa-play"></i>
                         </div>
@@ -72,37 +73,38 @@ const getFetch_Popular = async url => {
         const data = await res.json();
         const {results} = data;
         results.map((result) =>{
-        document.querySelector('.column-cards').innerHTML +=(`
-                        <div class="card" onclick="next_page_details(${result.id})">
-                        <a href="./movie_click/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
-                        <div class="card_top_circle present">
-                            <span>${result.vote_average * 10}%</span>
-                        </div>
-                        <h3><a href="./movie_click/index.html">${result.title}</a></h3>
-                        <p>${result.release_date}</p>
-                        <li class="dod_menu">
-                            <ul class="card_menu" id="card_menu">
-                                <li class="dod_item">
-                                    <i class="fas fa-bars"></i>
-                                    <a class="dod_link">Add to list</a>
-                                </li>
-                                <li class="dod_item">
-                                    <i class="fas fa-heart"></i>
-                                    <a class="dod_link">Favorite</a>
-                                </li>
-                                <li class="dod_item">
-                                    <i class="far fa-comment"></i>
-                                    <a class="dod_link">Watchlist</a>
-                                </li>
-                                <li class="dod_item">
-                                    <i class="fas fa-star"></i>
-                                    <a class="dod_link">Your rating</a>
-                                </li>
-                            </ul>
-                            <img class="card_dod" onclick="btnHandler(event)"  src="./img/threedod.svg" alt="">
+            document.querySelector('.column-cards').innerHTML +=(`
+            <div class="card" onclick="next_page_details(${result.id})">
+            <a href="./movie_click/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
+            <div class="card_top_circle present">
+                <span>${Math.ceil(result.vote_average * 10)}%</span>
+            </div>
+            <h3><a href="./movie_click/index.html">${result.title}</a></h3>
+            <p>${result.release_date}</p>
+                <li class="dod_menu">
+                    <ul class="card_menu" id="card_menu">
+                        <li class="dod_item">
+                            <i class="fas fa-bars"></i>
+                            <a class="dod_link">Add to list</a>
                         </li>
-                    </div>
-        `)})
+                        <li class="dod_item">
+                            <i class="fas fa-heart"></i>
+                            <a class="dod_link">Favorite</a>
+                        </li>
+                        <li class="dod_item">
+                            <i class="far fa-comment"></i>
+                            <a class="dod_link">Watchlist</a>
+                        </li>
+                        <li class="dod_item">
+                            <i class="fas fa-star"></i>
+                            <a class="dod_link">Your rating</a>
+                        </li>
+                    </ul>
+                    <img class="card_dod" onclick="btnHandler(event)"  src="./img/threedod.svg" alt="">
+                </li>
+            </div>
+        `)
+        })
     }catch(err) {console.log(err)}
 }
 const getFetch_getUpcomming = async url => {
@@ -155,7 +157,8 @@ const getFetch_recommends = async url => {
         results.map((result,index) =>{
             document.querySelector('.column-cards-2').innerHTML +=(`
                     <div class="card" onclick="next_page_details(${result.id})">
-                    <a href="./movie_click/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
+                    <a href="./movie_click/index.html">
+                    <img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
                     <div class="card_top_circle present">
                         <span>${Math.ceil(result.vote_average * 10)}%</span>
                     </div>
@@ -208,20 +211,84 @@ const next_page_details = (id) => {
 const btnHandler = (event) => {
     event.target.parentElement.firstElementChild.classList.toggle("toggle");
 }
-const next_prev = (elem, teg) => {
+const next_prev = (elem, teg,type) => {
+    console.log(type)
     var a = document.getElementsByTagName(teg);
-    if(teg === 'h3'){
-        for (i = 0; i < a.length; i++) {
-            a[i].classList.remove('select');
-        }
-        elem.classList.add('select');
+    if(teg === 'p'){
+            for (i = 0; i < a.length; i++) {
+                a[i].classList.remove('selected');
+            }
+            elem.classList.add('selected');
+
+            if(type === 'onTv'){
+                document.querySelector('.column-cards').innerHTML = null;
+                getFetch_Popular(recommends);
+            }
+            if(type === 'forRent'){
+                document.querySelector('.column-cards').innerHTML = null;
+                getFetch_Popular(topRated);
+            }
+            if(type === 'inTheatres'){
+                document.querySelector('.column-cards').innerHTML = null;
+                getFetch_Popular(getUpcomming);
+            }
+            if(type === 'stream'){
+                document.querySelector('.column-cards').innerHTML = null;
+                getFetch_Popular(getPopular);
+            }
     }
-   else{
+    else if(teg === 'h4'){
         for (i = 0; i < a.length; i++) {
             a[i].classList.remove('selected');
         }
         elem.classList.add('selected');
-   }
+
+        if(type === 'movies'){
+            document.querySelector('.column-cards-1').innerHTML = null;
+            getFetch_getUpcomming(getUpcomming);
+        }
+        if(type === 'tv'){
+            document.querySelector('.column-cards-1').innerHTML = null;
+            getFetch_getUpcomming(topRated);
+        }
+    }
+    else if(teg === 'span'){
+    for (i = 0; i < a.length; i++) {
+        a[i].classList.remove('selected');
+    }
+    elem.classList.add('selected');
+
+    if(type === 'today'){
+        document.querySelector('.column-cards-2').innerHTML = null;
+        getFetch_recommends(recommends);
+    }
+    if(type === 'thisWeek'){
+        document.querySelector('.column-cards-2').innerHTML = null;
+        getFetch_recommends(topRated);
+    }
+    }
+    //  else{
+    //     for (i = 0; i < a.length; i++) {
+    //         a[i].classList.remove('select');
+    //     }
+    //     elem.classList.add('select');
+    //     if(type === 'on_tv'){
+    //         document.querySelector('.actor-group').innerHTML = null ?? [];
+    //         getFech_nowPLaying_two(recommends);
+    //     }
+    //     if(type === 'for_rent'){
+    //         document.querySelector('.actor-group').innerHTML = null ?? [];
+    //         getFech_nowPLaying_two(topRated);
+    //     }
+    //     if(type === 'in_theatre'){
+    //         document.querySelector('.actor-group').innerHTML = null ?? [];
+    //         getFech_nowPLaying_two(getUpcomming);
+    //     }
+    //     if(type === 'streaming'){
+    //         document.querySelector('.actor-group').innerHTML = [];
+    //         getFech_nowPLaying_two(nowPlaying);
+    //     }
+    // }
 }
 const sendInputValue = () => {
     let input = document.getElementById('serch-input').value;
