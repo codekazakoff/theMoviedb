@@ -53,7 +53,7 @@ const getFech_nowPLaying_two = async url => {
             document.querySelector('.actor-group').innerHTML+=`
                     <div class="actor-card" onclick="next_page_details(${result.id})">
                         <div class="actor-box-mg">
-                            <a href="./movie_click/index.html">
+                            <a href="../info/index.html">
                                 <img onmousemove="move_mouse('${result.backdrop_path}')" src="https://image.tmdb.org/t/p/w500${result.backdrop_path}" alt="Not found Img">
                             </a>
                             <i class="fas fa-play"></i>
@@ -75,11 +75,11 @@ const getFetch_Popular = async url => {
         results.map((result) =>{
             document.querySelector('.column-cards').innerHTML +=(`
             <div class="card" onclick="next_page_details(${result.id})">
-            <a href="./movie_click/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
+            <a href="../info/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
             <div class="card_top_circle present">
                 <span>${Math.ceil(result.vote_average * 10)}%</span>
             </div>
-            <h3><a href="./movie_click/index.html">${result.title}</a></h3>
+            <h3><a href="../info/index.html">${result.title}</a></h3>
             <p>${result.release_date}</p>
                 <li class="dod_menu">
                     <ul class="card_menu" id="card_menu">
@@ -115,11 +115,11 @@ const getFetch_getUpcomming = async url => {
         results.map((result) =>{
             document.querySelector('.column-cards-1').innerHTML +=(`
             <div class="card" onclick="next_page_details(${result.id})">
-            <a href="./movie_click/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
+            <a href="../info/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
             <div class="card_top_circle present">
                 <span>${result.vote_average * 10}%</span>
             </div>
-            <h3><a href="./movie_click/index.html">${result.title}</a></h3>
+            <h3><a href="../info/index.html">${result.title}</a></h3>
             <p>${result.release_date}</p>
                 <li class="dod_menu">
                     <ul class="card_menu" id="card_menu">
@@ -157,12 +157,12 @@ const getFetch_recommends = async url => {
         results.map((result,index) =>{
             document.querySelector('.column-cards-2').innerHTML +=(`
                     <div class="card" onclick="next_page_details(${result.id})">
-                    <a href="./movie_click/index.html">
+                    <a href="../info/index.html">
                     <img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
                     <div class="card_top_circle present">
                         <span>${Math.ceil(result.vote_average * 10)}%</span>
                     </div>
-                    <h3><a href="./movie_click/index.html">${result.title}</a></h3>
+                    <h3><a href="../info/index.html">${result.title}</a></h3>
                     <p>${result.release_date}</p>
                     <li class="dod_menu">
                         <ul class="card_menu" id="card_menu">
