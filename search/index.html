@@ -2,191 +2,189 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	 <meta name="viewport" content="width=1200, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-    <link rel="stylesheet" href="./css/search.css">
-    <title>Search</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1280, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+	<link rel="stylesheet" href="./css/search.css">
+	<title>Search</title>
 </head>
 
 
 <body>
 
-    <div id="preloader">
-        <div class="dws-progress-bar"></div>
-    </div>
+	<div id="preloader">
+		<div class="dws-progress-bar"></div>
+	</div>
 
-    <header id='navbar'>
-        <div class="container">
-            <div class="menu">
-                <div class="menu_left">
-                    <a href="../index.html"> <img src="./img/logo.svg" alt="T M D B"></a>
-                    <ul class="menu_little">
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">Movies</a>
-                            <ul class="menu_little_">
-                                <li class="menu-item_">
-                                    <a href="#">Popular</a>
-                                </li>
-                                <li class="menu-item_">
-                                    <a href="#">Now Playing</a>
-                                </li>
-                                <li class="menu-item_">
-                                    <a href="#">Upcoming</a>
-                                </li>
-                                <li class="menu-item_ padding">
-                                    <a href="#">Top Rated</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">TV Shows</a>
-                            <ul class="menu_little_">
-                                <li class="menu-item_">
-                                    <a href="#">Popular</a>
-                                </li>
-                                <li class="menu-item_">
-                                    <a href="#">Airing Today</a>
-                                </li>
-                                <li class="menu-item_">
-                                    <a href="#">On TV</a>
-                                </li>
-                                <li class="menu-item_ padding">
-                                    <a href="#">Top Rated</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">People</a>
-                            <ul class="menu_little_">
-                                <li class="menu-item_ padding width">
-                                    <a href="#">Popular People</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item right">
-                            <a href="#" class="menu-link">More</a>
-                            <ul class="menu_little_">
-                                <li class="menu-item_">
-                                    <a href="#">Disscussions</a>
-                                </li>
-                                <li class="menu-item_">
-                                    <a href="#">Leaderboard</a>
-                                </li>
-                                <li class="menu-item_">
-                                    <a href="#">Support</a>
-                                </li>
-                                <li class="menu-item_ padding">
-                                    <a href="#">API</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="menu_right">
-                    <img class="left plus" src="./img/plus.svg" alt="">
-                    <a class="left language" href="#">EN</a>
-                    <a class="left login" href="../login/index.html">Login</a>
-                    <a class="left text" href="#">Join TMDb</a>
-                    <img class="left" src="./img/search.svg" alt="search">
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="sub-media">
-            <div class="input-line">
-                <div class="d-flex-search">
-                    <div class="search"><i class="fas fa-search"></i></div>
-                    <div class="input-search">
-                        <form action="/search">
-                            <input type="search" placeholder="Search for a movie, tv show, person..."
-                                id='search_localstore'>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="line-line"></div>
-        </section>
-        <section class="container section-cards">
-            <div class="left-section">
-                <div class="card-section">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Search Results</h3>
-                        </div>
-                        <div class="card-body">
-                            <ul class="card-title">
-                                <li class="card-text"><a href="#">TV Shows</a> <span
-                                        class="badge badge-active">354</span></li>
-                                <li><a href="#">Movies</a> <span class="badge">2,377</span></li>
-                                <li><a href="#">People</a> <span class="badge">8,399</span></li>
-                                <li><a href="#">Companies</a> <span class="badge">247</span></li>
-                                <li><a href="#">Collections</a> <span class="badge">15</span></li>
-                                <li><a href="#">Keywords</a> <span class="badge">5</span></li>
-                                <li><a href="#">Networks</a> <span class="badge">3</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="i-icon">
-                            <img src="./img/i.png" alt="">
-                        </div>
-                        Tip: You can use the 'y:' filter to narrow your results by year. Example: 'star wars y:1977'.
-                    </div>
-                </div>
-            </div>
-            <div class="right-section"></div>
-        </section>
-        <section class="footer">
-            <div class="footer-container">
-                <div class="footer-first">
-                    <div class="images"> <img src="./img/foote-logo.svg" alt=""></div>
-                    <a href="#" class="join">Join the Community</a>
-                </div>
-                <div class="footer-text-menu">
-                    <h3>THE BASICS</h3>
-                    <ul>
-                        <li><a href="#">About TMDb</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Support Forums</a></li>
-                        <li><a href="#">API</a></li>
-                        <li><a href="#">System Status</a></li>
-                    </ul>
-                </div>
-                <div class="footer-text-menu">
-                    <h3>GET INVOLVED</h3>
-                    <ul>
-                        <li><a href="#">Contribution Bible</a></li>
-                        <li><a href="#">3rd Party Applications</a></li>
-                        <li><a href="#">Add New Movie</a></li>
-                        <li><a href="#">Add New TV Show</a></li>
-                    </ul>
-                </div>
-                <div class="footer-text-menu">
-                    <h3>COMMUNITY</h3>
-                    <ul>
-                        <li><a href="#">Guidelines</a></li>
-                        <li><a href="#">Discussions</a></li>
-                        <li><a href="#">Leaderboard</a></li>
-                        <li><a href="#">Twitter</a></li>
-                    </ul>
-                </div>
-                <div class="footer-text-menu">
-                    <h3>LEGAL</h3>
-                    <ul>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">API Terms of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="../js/plugin.js"></script>
-    <script src="./js/index.js"></script>
+	<header id='navbar'>
+		<div class="container">
+			<div class="menu">
+				<div class="menu_left">
+					<a href="../index.html"> <img src="./img/logo.svg" alt="T M D B"></a>
+					<ul class="menu_little">
+						<li class="menu-item">
+							<a href="#" class="menu-link">Movies</a>
+							<ul class="menu_little_">
+								<li class="menu-item_">
+									<a href="#">Popular</a>
+								</li>
+								<li class="menu-item_">
+									<a href="#">Now Playing</a>
+								</li>
+								<li class="menu-item_">
+									<a href="#">Upcoming</a>
+								</li>
+								<li class="menu-item_ padding">
+									<a href="#">Top Rated</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-item">
+							<a href="#" class="menu-link">TV Shows</a>
+							<ul class="menu_little_">
+								<li class="menu-item_">
+									<a href="#">Popular</a>
+								</li>
+								<li class="menu-item_">
+									<a href="#">Airing Today</a>
+								</li>
+								<li class="menu-item_">
+									<a href="#">On TV</a>
+								</li>
+								<li class="menu-item_ padding">
+									<a href="#">Top Rated</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-item">
+							<a href="#" class="menu-link">People</a>
+							<ul class="menu_little_">
+								<li class="menu-item_ padding width">
+									<a href="#">Popular People</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-item right">
+							<a href="#" class="menu-link">More</a>
+							<ul class="menu_little_">
+								<li class="menu-item_">
+									<a href="#">Disscussions</a>
+								</li>
+								<li class="menu-item_">
+									<a href="#">Leaderboard</a>
+								</li>
+								<li class="menu-item_">
+									<a href="#">Support</a>
+								</li>
+								<li class="menu-item_ padding">
+									<a href="#">API</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="menu_right">
+					<img class="left plus" src="./img/plus.svg" alt="">
+					<a class="left language" href="#">EN</a>
+					<a class="left login" href="../login/index.html">Login</a>
+					<a class="left text" href="#">Join TMDb</a>
+					<img class="left" src="./img/search.svg" alt="search">
+				</div>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section class="sub-media">
+			<div class="input-line">
+				<div class="d-flex-search">
+					<div class="search"><i class="fas fa-search"></i></div>
+					<div class="input-search">
+						<form action="/search">
+							<input type="search" placeholder="Search for a movie, tv show, person..." id='search_localstore'>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="line-line"></div>
+		</section>
+		<section class="container section-cards">
+			<div class="left-section">
+				<div class="card-section">
+					<div class="card">
+						<div class="card-header">
+							<h3>Search Results</h3>
+						</div>
+						<div class="card-body">
+							<ul class="card-title">
+								<li class="card-text"><a href="#">TV Shows</a> <span class="badge badge-active">354</span></li>
+								<li><a href="#">Movies</a> <span class="badge">2,377</span></li>
+								<li><a href="#">People</a> <span class="badge">8,399</span></li>
+								<li><a href="#">Companies</a> <span class="badge">247</span></li>
+								<li><a href="#">Collections</a> <span class="badge">15</span></li>
+								<li><a href="#">Keywords</a> <span class="badge">5</span></li>
+								<li><a href="#">Networks</a> <span class="badge">3</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="i-icon">
+							<img src="./img/i.png" alt="">
+						</div>
+						Tip: You can use the 'y:' filter to narrow your results by year. Example: 'star wars y:1977'.
+					</div>
+				</div>
+			</div>
+			<div class="right-section"></div>
+		</section>
+		<section class="footer">
+			<div class="footer-container">
+				<div class="footer-first">
+					<div class="images"> <img src="./img/foote-logo.svg" alt=""></div>
+					<a href="#" class="join">Join the Community</a>
+				</div>
+				<div class="footer-text-menu">
+					<h3>THE BASICS</h3>
+					<ul>
+						<li><a href="#">About TMDb</a></li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">Support Forums</a></li>
+						<li><a href="#">API</a></li>
+						<li><a href="#">System Status</a></li>
+					</ul>
+				</div>
+				<div class="footer-text-menu">
+					<h3>GET INVOLVED</h3>
+					<ul>
+						<li><a href="#">Contribution Bible</a></li>
+						<li><a href="#">3rd Party Applications</a></li>
+						<li><a href="#">Add New Movie</a></li>
+						<li><a href="#">Add New TV Show</a></li>
+					</ul>
+				</div>
+				<div class="footer-text-menu">
+					<h3>COMMUNITY</h3>
+					<ul>
+						<li><a href="#">Guidelines</a></li>
+						<li><a href="#">Discussions</a></li>
+						<li><a href="#">Leaderboard</a></li>
+						<li><a href="#">Twitter</a></li>
+					</ul>
+				</div>
+				<div class="footer-text-menu">
+					<h3>LEGAL</h3>
+					<ul>
+						<li><a href="#">Terms of Use</a></li>
+						<li><a href="#">API Terms of Use</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="../js/plugin.js"></script>
+	<script src="./js/index.js"></script>
 </body>
 
 </html>
