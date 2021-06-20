@@ -2,366 +2,367 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" 	<meta name="viewport" content="width=1200, initial-scale=1.0">
+	content="IE=edge">
+	<meta name="viewport" content="width=1200, initial-scale=1.0">
+	<title>Movies</title>
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
 </head>
 
 <body>
 
-    <div id="preloader">
-        <div class="dws-progress-bar"></div>
-    </div>
+	<div id="preloader">
+		<div class="dws-progress-bar"></div>
+	</div>
 
-    <header id='navbar'>
-        <div class="container">
-            <div class="menu">
-                <div class="menu_left">
-                    <a href="./index.html"> <img src="./img/logo.svg" alt="T M D B"></a>
-                    <ul class="menu_little">
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">Movies</a>
-                            <ul class="menu_little_">
-                                <li class="menu-item_">
-                                    <a href="#">Popular</a>
-                                </li>
-                                <li class="menu-item_">
-                                    <a href="#">Now Playing</a>
-                                </li>
-                                <li class="menu-item_">
-                                    <a href="#">Upcoming</a>
-                                </li>
-                                <li class="menu-item_ padding">
-                                    <a href="#">Top Rated</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">TV Shows</a>
-                            <ul class="menu_little_">
-                                <li class="menu-item_">
-                                    <a href="#">Popular</a>
-                                </li>
-                                <li class="menu-item_">
-                                    <a href="#">Airing Today</a>
-                                </li>
-                                <li class="menu-item_">
-                                    <a href="#">On TV</a>
-                                </li>
-                                <li class="menu-item_ padding">
-                                    <a href="#">Top Rated</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">People</a>
-                            <ul class="menu_little_">
-                                <li class="menu-item_ padding width">
-                                    <a href="#">Popular People</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item right">
-                            <a href="#" class="menu-link">More</a>
-                            <ul class="menu_little_">
-                                <li class="menu-item_">
-                                    <a href="#">Disscussions</a>
-                                </li>
-                                <li class="menu-item_">
-                                    <a href="#">Leaderboard</a>
-                                </li>
-                                <li class="menu-item_">
-                                    <a href="#">Support</a>
-                                </li>
-                                <li class="menu-item_ padding">
-                                    <a href="#">API</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="menu_right">
-                    <i class="fas fa-bars" onclick="bars_click()"></i>
-                    <div class="right_after_bars">
-                        <img class="left plus ikki" src="./img/plus.svg" alt="">
-                        <a class="left language" href="#">EN</a>
-                        <a class="left login" href="./login/index.html">Login</a>
-                        <a class="left text" href="#">Join TMDb</a>
-                        <img class="left search-icon" src="./img/search.svg" alt="search">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main id="main">
-        <section class="back-imgg">
+	<header id='navbar'>
+		<div class="container">
+			<div class="menu">
+				<div class="menu_left">
+					<a href="./index.html"> <img src="./img/logo.svg" alt="T M D B"></a>
+					<ul class="menu_little">
+						<li class="menu-item">
+							<a href="#" class="menu-link">Movies</a>
+							<ul class="menu_little_">
+								<li class="menu-item_">
+									<a href="#">Popular</a>
+								</li>
+								<li class="menu-item_">
+									<a href="#">Now Playing</a>
+								</li>
+								<li class="menu-item_">
+									<a href="#">Upcoming</a>
+								</li>
+								<li class="menu-item_ padding">
+									<a href="#">Top Rated</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-item">
+							<a href="#" class="menu-link">TV Shows</a>
+							<ul class="menu_little_">
+								<li class="menu-item_">
+									<a href="#">Popular</a>
+								</li>
+								<li class="menu-item_">
+									<a href="#">Airing Today</a>
+								</li>
+								<li class="menu-item_">
+									<a href="#">On TV</a>
+								</li>
+								<li class="menu-item_ padding">
+									<a href="#">Top Rated</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-item">
+							<a href="#" class="menu-link">People</a>
+							<ul class="menu_little_">
+								<li class="menu-item_ padding width">
+									<a href="#">Popular People</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-item right">
+							<a href="#" class="menu-link">More</a>
+							<ul class="menu_little_">
+								<li class="menu-item_">
+									<a href="#">Disscussions</a>
+								</li>
+								<li class="menu-item_">
+									<a href="#">Leaderboard</a>
+								</li>
+								<li class="menu-item_">
+									<a href="#">Support</a>
+								</li>
+								<li class="menu-item_ padding">
+									<a href="#">API</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="menu_right">
+					<i class="fas fa-bars" onclick="bars_click()"></i>
+					<div class="right_after_bars">
+						<img class="left plus ikki" src="./img/plus.svg" alt="">
+						<a class="left language" href="#">EN</a>
+						<a class="left login" href="./login/index.html">Login</a>
+						<a class="left text" href="#">Join TMDb</a>
+						<img class="left search-icon" src="./img/search.svg" alt="search">
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main id="main">
+		<section class="back-imgg">
 
-        </section>
-        <section class="column">
-            <div class="column-header container">
-                <h2>What's Popular</h2>
-                <div class="selector_wrap">
-                    <p id="stream" onclick="next_prev(this,'p','stream')" class="anchor selected">Streaming</a>
-                        <p id="onTv" onclick="next_prev(this,'p','onTv')" class="anchor ">on TV</a>
-                            <p id="forRent" onclick="next_prev(this,'p','forRent')" class="anchor ">For Rent</a>
-                                <p id="inTheatres" onclick="next_prev(this,'p','inTheatres')" class="anchor ">In
-                                    Theaters</a>
-                </div>
-            </div>
-            <div class="shadow">
-                <div class="column-cards scroller"></div>
-            </div>
-        </section>
-        <section class="column">
-            <div class="column-header container">
-                <h2>Free To Watch</h2>
-                <div class="selector_wrap">
-                    <h4 onclick="next_prev(this,'h4','movies')" class="anchor selected">Movies</h4>
-                    <h4 onclick="next_prev(this,'h4','tv')" class="anchor ">TV</h4>
-                </div>
-            </div>
-            <div class="shadow">
-                <div class="column-cards-1 scroller">
+		</section>
+		<section class="column">
+			<div class="column-header container">
+				<h2>What's Popular</h2>
+				<div class="selector_wrap">
+					<p id="stream" onclick="next_prev(this,'p','stream')" class="anchor selected">Streaming</a>
+						<p id="onTv" onclick="next_prev(this,'p','onTv')" class="anchor ">on TV</a>
+							<p id="forRent" onclick="next_prev(this,'p','forRent')" class="anchor ">For Rent</a>
+								<p id="inTheatres" onclick="next_prev(this,'p','inTheatres')" class="anchor ">In
+									Theaters</a>
+				</div>
+			</div>
+			<div class="shadow">
+				<div class="column-cards scroller"></div>
+			</div>
+		</section>
+		<section class="column">
+			<div class="column-header container">
+				<h2>Free To Watch</h2>
+				<div class="selector_wrap">
+					<h4 onclick="next_prev(this,'h4','movies')" class="anchor selected">Movies</h4>
+					<h4 onclick="next_prev(this,'h4','tv')" class="anchor ">TV</h4>
+				</div>
+			</div>
+			<div class="shadow">
+				<div class="column-cards-1 scroller">
 
-                </div>
-            </div>
-        </section>
-        <section class="column-3 ">
-            <div class="shadow">
-                <div class="column-header marTop container">
-                    <h2>Latest Trailers</h2>
-                    <div class="selector_wrap border">
-                        <h3 onclick="next_prev(this,'h3','streaming')" class="anchor color select">Streaming</h3>
-                        <h3 onclick="next_prev(this,'h3','on_tv')" class="anchor color ">on TV</h3>
-                        <h3 onclick="next_prev(this,'h3','for_rent')" class="anchor color ">For Rent</h3>
-                        <h3 onclick="next_prev(this,'h3','in_theatre')" class="anchor color ">In Theaters</h3>
-                    </div>
-                </div>
-                <div class="column-header-top">
-                    <div class="actor-group scroller">
-                        <div class="backImg">
-                            <img id="img_back_images"
-                                src="https://image.tmdb.org/t/p/w500/t/p/w1920_and_h427_multi_faces/iDdpiUnCeXvBmrkBFpL6lKsZt33.jpg"
-                                alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="column mt-3">
-            <div class="column-header container">
-                <h2>Trending</h2>
-                <div class="selector_wrap">
-                    <span onclick="next_prev(this,'span','today')" class="anchor selected">Today</span>
-                    <span onclick="next_prev(this,'span','thisWeek')" class="anchor ">This week</span>
-                </div>
-            </div>
-            <div class="shadow">
-                <div class="misk">
-                    <div class="scroller column-cards-2"></div>
-                </div>
-            </div>
-        </section>
-        <section class="prev-footer-back-img">
-            <div class="container prev-footer-text">
-                <h1>Join Today</h1>
-                <div class="img-flex-text">
-                    <ul class="btn-and-text">
-                        <p>Get access to maintain your own <i>custom personal lists, track what you've seen </i> and
-                            search </p>
-                        <p>and filter for <i>what to watch next</i> — regardless if it's in theatres, on TV or available
-                            on </p>
-                        <p>popular streaming services like Kocowa, DOCSVILLE, Argo, and True Story.</p>
-                        <button class="btn"><a href="./login_Page/index.html">Sign Up</a></button>
-                    </ul>
-                    <ul class="text-menu">
-                        <li>Enjoy TMDb ad free</li>
-                        <li>Maintain a personal watchlist</li>
-                        <li>Filter by your subscribed streaming services and find something</li>
-                        <li>to watch</li>
-                        <li>Log the movies and TV shows you've seen</li>
-                        <li>Build custom lists</li>
-                        <li>Contribute to and improve our database</li>
-                    </ul>
-                </div>
+				</div>
+			</div>
+		</section>
+		<section class="column-3 ">
+			<div class="shadow">
+				<div class="column-header marTop container">
+					<h2>Latest Trailers</h2>
+					<div class="selector_wrap border">
+						<h3 onclick="next_prev(this,'h3','streaming')" class="anchor color select">Streaming</h3>
+						<h3 onclick="next_prev(this,'h3','on_tv')" class="anchor color ">on TV</h3>
+						<h3 onclick="next_prev(this,'h3','for_rent')" class="anchor color ">For Rent</h3>
+						<h3 onclick="next_prev(this,'h3','in_theatre')" class="anchor color ">In Theaters</h3>
+					</div>
+				</div>
+				<div class="column-header-top">
+					<div class="actor-group scroller">
+						<div class="backImg">
+							<img id="img_back_images"
+								src="https://image.tmdb.org/t/p/w500/t/p/w1920_and_h427_multi_faces/iDdpiUnCeXvBmrkBFpL6lKsZt33.jpg"
+								alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="column mt-3">
+			<div class="column-header container">
+				<h2>Trending</h2>
+				<div class="selector_wrap">
+					<span onclick="next_prev(this,'span','today')" class="anchor selected">Today</span>
+					<span onclick="next_prev(this,'span','thisWeek')" class="anchor ">This week</span>
+				</div>
+			</div>
+			<div class="shadow">
+				<div class="misk">
+					<div class="scroller column-cards-2"></div>
+				</div>
+			</div>
+		</section>
+		<section class="prev-footer-back-img">
+			<div class="container prev-footer-text">
+				<h1>Join Today</h1>
+				<div class="img-flex-text">
+					<ul class="btn-and-text">
+						<p>Get access to maintain your own <i>custom personal lists, track what you've seen </i> and
+							search </p>
+						<p>and filter for <i>what to watch next</i> — regardless if it's in theatres, on TV or available
+							on </p>
+						<p>popular streaming services like Kocowa, DOCSVILLE, Argo, and True Story.</p>
+						<button class="btn"><a href="./login_Page/index.html">Sign Up</a></button>
+					</ul>
+					<ul class="text-menu">
+						<li>Enjoy TMDb ad free</li>
+						<li>Maintain a personal watchlist</li>
+						<li>Filter by your subscribed streaming services and find something</li>
+						<li>to watch</li>
+						<li>Log the movies and TV shows you've seen</li>
+						<li>Build custom lists</li>
+						<li>Contribute to and improve our database</li>
+					</ul>
+				</div>
 
-            </div>
-        </section>
-        <section class="col-12 container">
-            <div class="header-line">
-                <h4>Leaderboard</h4>
-                <div class="mt-5">
-                    <p>
-                        <span class="dot-all first"></span>
-                        All Time Edits
-                    </p>
-                    <p>
-                        <span class="dot-all second"></span>
-                        Edits This Week
-                    </p>
-                </div>
-            </div>
-            <div class="main-line">
-                <div class="main-left">
-                    <div class="circle-card">
-                        <div class="circle">
-                            <img src="./img/9.jpg" alt="">
-                        </div>
-                        <div class="circle-text">
-                            <p>Samanra</p>
-                            <p> <span class="first-color"></span> 36,7 </p>
-                            <p> <span class="second-color"></span> 71,45200 </p>
-                        </div>
-                    </div>
-                    <div class="circle-card">
-                        <div class="circle">
-                            <img src="./img/little1.jpg" alt="">
-                        </div>
-                        <div class="circle-text">
-                            <p>Samanra</p>
-                            <p> <span class="first-color"></span> 36,7 </p>
-                            <p> <span class="second-color"></span> 71,45200 </p>
-                        </div>
-                    </div>
-                    <div class="circle-card">
-                        <div class="circle">
-                            <img src="./img/2.jpg" alt="">
-                        </div>
-                        <div class="circle-text">
-                            <p>Samanra</p>
-                            <p> <span class="first-color"></span> 36,7 </p>
-                            <p> <span class="second-color"></span> 71,45200 </p>
-                        </div>
-                    </div>
-                    <div class="circle-card">
-                        <div class="circle">
-                            <img src="./img/3.jpg" alt="">
-                        </div>
-                        <div class="circle-text">
-                            <p>Samanra</p>
-                            <p> <span class="first-color"></span> 36,7 </p>
-                            <p> <span class="second-color"></span> 71,45200 </p>
-                        </div>
-                    </div>
-                    <div class="circle-card">
-                        <div class="circle">
-                            <img src="./img/4.jpg" alt="">
-                        </div>
-                        <div class="circle-text">
-                            <p>Samanra</p>
-                            <p> <span class="first-color"></span> 36,7 </p>
-                            <p> <span class="second-color"></span> 71,45200 </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="main-right">
-                    <div class="circle-card">
-                        <div class="circle">
-                            <img src="./img/10.jpg" alt="">
-                        </div>
-                        <div class="circle-text">
-                            <p>Samanra</p>
-                            <p> <span class="first-color"></span> 36,7 </p>
-                            <p> <span class="second-color"></span> 71,45200 </p>
-                        </div>
-                    </div>
-                    <div class="circle-card">
-                        <div class="circle">
-                            <img src="./img/5.jpg" alt="">
-                        </div>
-                        <div class="circle-text">
-                            <p>Samanra</p>
-                            <p> <span class="first-color"></span> 36,7 </p>
-                            <p> <span class="second-color"></span> 71,45200 </p>
-                        </div>
-                    </div>
-                    <div class="circle-card">
-                        <div class="circle">
-                            <img src="./img/6.jpg" alt="">
-                        </div>
-                        <div class="circle-text">
-                            <p>Samanra</p>
-                            <p> <span class="first-color"></span> 36,7 </p>
-                            <p> <span class="second-color"></span> 71,45200 </p>
-                        </div>
-                    </div>
-                    <div class="circle-card">
-                        <div class="circle">
-                            <img src="./img/7.jpg" alt="">
-                        </div>
-                        <div class="circle-text">
-                            <p>Samanra</p>
-                            <p> <span class="first-color"></span> 36,7 </p>
-                            <p> <span class="second-color"></span> 71,45200 </p>
-                        </div>
-                    </div>
-                    <div class="circle-card">
-                        <div class="circle">
-                            <img src="./img/8.jpg" alt="">
-                        </div>
-                        <div class="circle-text">
-                            <p>Samanra</p>
-                            <p> <span class="first-color"></span> 36,7 </p>
-                            <p> <span class="second-color"></span> 71,45200 </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="footer">
-            <div class="footer-container">
-                <div class="footer-first">
-                    <div class="images"> <img src="./img/foote-logo.svg" alt=""></div>
-                    <a href="#" class="join">Join the Community</a>
-                </div>
-                <div class="footer-text-menu">
-                    <h3>THE BASICS</h3>
-                    <ul>
-                        <li><a href="#">About TMDb</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Support Forums</a></li>
-                        <li><a href="#">API</a></li>
-                        <li><a href="#">System Status</a></li>
-                    </ul>
-                </div>
-                <div class="footer-text-menu">
-                    <h3>GET INVOLVED</h3>
-                    <ul>
-                        <li><a href="#">Contribution Bible</a></li>
-                        <li><a href="#">3rd Party Applications</a></li>
-                        <li><a href="#">Add New Movie</a></li>
-                        <li><a href="#">Add New TV Show</a></li>
-                    </ul>
-                </div>
-                <div class="footer-text-menu">
-                    <h3>COMMUNITY</h3>
-                    <ul>
-                        <li><a href="#">Guidelines</a></li>
-                        <li><a href="#">Discussions</a></li>
-                        <li><a href="#">Leaderboard</a></li>
-                        <li><a href="#">Twitter</a></li>
-                    </ul>
-                </div>
-                <div class="footer-text-menu">
-                    <h3>LEGAL</h3>
-                    <ul>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">API Terms of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/plugin.js"></script>
-    <script src="js/main.js"></script>
+			</div>
+		</section>
+		<section class="col-12 container">
+			<div class="header-line">
+				<h4>Leaderboard</h4>
+				<div class="mt-5">
+					<p>
+						<span class="dot-all first"></span>
+						All Time Edits
+					</p>
+					<p>
+						<span class="dot-all second"></span>
+						Edits This Week
+					</p>
+				</div>
+			</div>
+			<div class="main-line">
+				<div class="main-left">
+					<div class="circle-card">
+						<div class="circle">
+							<img src="./img/9.jpg" alt="">
+						</div>
+						<div class="circle-text">
+							<p>Samanra</p>
+							<p> <span class="first-color"></span> 36,7 </p>
+							<p> <span class="second-color"></span> 71,45200 </p>
+						</div>
+					</div>
+					<div class="circle-card">
+						<div class="circle">
+							<img src="./img/little1.jpg" alt="">
+						</div>
+						<div class="circle-text">
+							<p>Samanra</p>
+							<p> <span class="first-color"></span> 36,7 </p>
+							<p> <span class="second-color"></span> 71,45200 </p>
+						</div>
+					</div>
+					<div class="circle-card">
+						<div class="circle">
+							<img src="./img/2.jpg" alt="">
+						</div>
+						<div class="circle-text">
+							<p>Samanra</p>
+							<p> <span class="first-color"></span> 36,7 </p>
+							<p> <span class="second-color"></span> 71,45200 </p>
+						</div>
+					</div>
+					<div class="circle-card">
+						<div class="circle">
+							<img src="./img/3.jpg" alt="">
+						</div>
+						<div class="circle-text">
+							<p>Samanra</p>
+							<p> <span class="first-color"></span> 36,7 </p>
+							<p> <span class="second-color"></span> 71,45200 </p>
+						</div>
+					</div>
+					<div class="circle-card">
+						<div class="circle">
+							<img src="./img/4.jpg" alt="">
+						</div>
+						<div class="circle-text">
+							<p>Samanra</p>
+							<p> <span class="first-color"></span> 36,7 </p>
+							<p> <span class="second-color"></span> 71,45200 </p>
+						</div>
+					</div>
+				</div>
+				<div class="main-right">
+					<div class="circle-card">
+						<div class="circle">
+							<img src="./img/10.jpg" alt="">
+						</div>
+						<div class="circle-text">
+							<p>Samanra</p>
+							<p> <span class="first-color"></span> 36,7 </p>
+							<p> <span class="second-color"></span> 71,45200 </p>
+						</div>
+					</div>
+					<div class="circle-card">
+						<div class="circle">
+							<img src="./img/5.jpg" alt="">
+						</div>
+						<div class="circle-text">
+							<p>Samanra</p>
+							<p> <span class="first-color"></span> 36,7 </p>
+							<p> <span class="second-color"></span> 71,45200 </p>
+						</div>
+					</div>
+					<div class="circle-card">
+						<div class="circle">
+							<img src="./img/6.jpg" alt="">
+						</div>
+						<div class="circle-text">
+							<p>Samanra</p>
+							<p> <span class="first-color"></span> 36,7 </p>
+							<p> <span class="second-color"></span> 71,45200 </p>
+						</div>
+					</div>
+					<div class="circle-card">
+						<div class="circle">
+							<img src="./img/7.jpg" alt="">
+						</div>
+						<div class="circle-text">
+							<p>Samanra</p>
+							<p> <span class="first-color"></span> 36,7 </p>
+							<p> <span class="second-color"></span> 71,45200 </p>
+						</div>
+					</div>
+					<div class="circle-card">
+						<div class="circle">
+							<img src="./img/8.jpg" alt="">
+						</div>
+						<div class="circle-text">
+							<p>Samanra</p>
+							<p> <span class="first-color"></span> 36,7 </p>
+							<p> <span class="second-color"></span> 71,45200 </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="footer">
+			<div class="footer-container">
+				<div class="footer-first">
+					<div class="images"> <img src="./img/foote-logo.svg" alt=""></div>
+					<a href="#" class="join">Join the Community</a>
+				</div>
+				<div class="footer-text-menu">
+					<h3>THE BASICS</h3>
+					<ul>
+						<li><a href="#">About TMDb</a></li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">Support Forums</a></li>
+						<li><a href="#">API</a></li>
+						<li><a href="#">System Status</a></li>
+					</ul>
+				</div>
+				<div class="footer-text-menu">
+					<h3>GET INVOLVED</h3>
+					<ul>
+						<li><a href="#">Contribution Bible</a></li>
+						<li><a href="#">3rd Party Applications</a></li>
+						<li><a href="#">Add New Movie</a></li>
+						<li><a href="#">Add New TV Show</a></li>
+					</ul>
+				</div>
+				<div class="footer-text-menu">
+					<h3>COMMUNITY</h3>
+					<ul>
+						<li><a href="#">Guidelines</a></li>
+						<li><a href="#">Discussions</a></li>
+						<li><a href="#">Leaderboard</a></li>
+						<li><a href="#">Twitter</a></li>
+					</ul>
+				</div>
+				<div class="footer-text-menu">
+					<h3>LEGAL</h3>
+					<ul>
+						<li><a href="#">Terms of Use</a></li>
+						<li><a href="#">API Terms of Use</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="js/plugin.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>
