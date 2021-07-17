@@ -1,29 +1,33 @@
+{
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "64px";
+    } else {
+      document.getElementById("navbar").style.top = "64px";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+}
 
-{var prevScrollpos = window.pageYOffset;
-   window.onscroll = function() {
-   var currentScrollPos = window.pageYOffset;
-   if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "64px";
-   } else {
-    document.getElementById("navbar").style.top = "64px";
-   }
-   prevScrollpos = currentScrollPos;
-}}
-
-const apiKey = '8a6efddbf519aa74be6e68f9ecfd443f';
+const apiKey = "8a6efddbf519aa74be6e68f9ecfd443f";
 const topRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;
 const getUpcomming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`;
 const getPopular = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
 const nowPlaying = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
 const recommends = `https://api.themoviedb.org/3/movie/804435/recommendations?api_key=${apiKey}&language=en-US&page=1`;
 
-const getFetch_nowPlaying_one = async url => {
-    try{
-        const res = await fetch(url);
-        const data = await res.json();
-        const {results} = data;
-        const indexOff = Math.ceil((Math.random() * Math.ceil(results.length) / results.length * 20)) - 1;
-        document.querySelector('.back-imgg').innerHTML =`
+const getFetch_nowPlaying_one = async (url) => {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    const { results } = data;
+    const indexOff =
+      Math.ceil(
+        ((Math.random() * Math.ceil(results.length)) / results.length) * 20
+      ) - 1;
+    document.querySelector(".back-imgg").innerHTML = `
                     <div class="background-image inner_content" style = "background-image : url('https://image.tmdb.org/t/p/w500/t/p/w1920_and_h600_multi_faces_filter(duotone,032541,01b4e4)/${results[indexOff].backdrop_path}')">
                         <div class="wrapper container">
                             <div class="title">
@@ -38,19 +42,18 @@ const getFetch_nowPlaying_one = async url => {
                             </div>
                         </div>
                     </div>
-        `
-    }
-    catch(err){
-        console.log(err)
-    }
-}
-const getFech_nowPLaying_two = async url => {
-    try{
-        const res = await fetch(url);
-        const data = await res.json();
-        const {results} = data;
-        results.forEach((result) =>{
-            document.querySelector('.actor-group').innerHTML+=`
+        `;
+  } catch (err) {
+    console.log(err);
+  }
+};
+const getFech_nowPLaying_two = async (url) => {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    const { results } = data;
+    results.forEach((result) => {
+      document.querySelector(".actor-group").innerHTML += `
                     <div class="actor-card" onclick="next_page_details(${result.id})">
                         <div class="actor-box-mg">
                             <a href="../info/index.html">
@@ -63,19 +66,23 @@ const getFech_nowPLaying_two = async url => {
                             <p>${result.original_title}</p>
                         </div>
                     </div> 
-            `
-        })
-    }catch(err) {console.log(err)}
-}
-const getFetch_Popular = async url => {
-    try{
-        const res = await fetch(url);
-        const data = await res.json();
-        const {results} = data;
-        results.map((result) =>{
-            document.querySelector('.column-cards').innerHTML +=(`
+            `;
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+const getFetch_Popular = async (url) => {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    const { results } = data;
+    results.map((result) => {
+      document.querySelector(".column-cards").innerHTML += `
             <div class="card" onclick="next_page_details(${result.id})">
-            <a href="../info/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
+            <a href="../info/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${
+              result.poster_path
+            }" alt=""></a>
             <div class="card_top_circle present">
                 <span>${Math.ceil(result.vote_average * 10)}%</span>
             </div>
@@ -103,19 +110,23 @@ const getFetch_Popular = async url => {
                     <img class="card_dod" onclick="btnHandler(event)"  src="./img/threedod.svg" alt="">
                 </li>
             </div>
-        `)
-        })
-    }catch(err) {console.log(err)}
-}
-const getFetch_getUpcomming = async url => {
-    try{
-        const res =  await fetch(url);
-        const data = await res.json();
-        const {results} = data;
-        results.map((result) =>{
-            document.querySelector('.column-cards-1').innerHTML +=(`
+        `;
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+const getFetch_getUpcomming = async (url) => {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    const { results } = data;
+    results.map((result) => {
+      document.querySelector(".column-cards-1").innerHTML += `
             <div class="card" onclick="next_page_details(${result.id})">
-            <a href="../info/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
+            <a href="../info/index.html"><img class="card_img" src="https://image.tmdb.org/t/p/w500${
+              result.poster_path
+            }" alt=""></a>
             <div class="card_top_circle present">
                 <span>${result.vote_average * 10}%</span>
             </div>
@@ -143,22 +154,24 @@ const getFetch_getUpcomming = async url => {
                     <img class="card_dod" onclick="btnHandler(event)"  src="./img/threedod.svg" alt="">
                 </li>
             </div>
-        `)
-        })
-    }catch(err){
-        console.log(err);
-    }
-}
-const getFetch_recommends = async url => {
-   try{
-        const res = await fetch(url);
-        const data = await res.json();
-        const {results} = data;
-        results.map((result,index) =>{
-            document.querySelector('.column-cards-2').innerHTML +=(`
+        `;
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+const getFetch_recommends = async (url) => {
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    const { results } = data;
+    results.map((result, index) => {
+      document.querySelector(".column-cards-2").innerHTML += `
                     <div class="card" onclick="next_page_details(${result.id})">
                     <a href="../info/index.html">
-                    <img class="card_img" src="https://image.tmdb.org/t/p/w500${result.poster_path}" alt=""></a>
+                    <img class="card_img" src="https://image.tmdb.org/t/p/w500${
+                      result.poster_path
+                    }" alt=""></a>
                     <div class="card_top_circle present">
                         <span>${Math.ceil(result.vote_average * 10)}%</span>
                     </div>
@@ -186,13 +199,12 @@ const getFetch_recommends = async url => {
             <img class="card_dod" onclick="btnHandler(event)"  src="./img/threedod.svg" alt="">
         </li>
                 </div>
-        `)
-        })
-   }catch (err) { 
-       console.log(err);
-   }
-}
-
+        `;
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 getFetch_nowPlaying_one(nowPlaying);
 getFech_nowPLaying_two(nowPlaying);
@@ -200,117 +212,113 @@ getFetch_Popular(getPopular);
 getFetch_getUpcomming(getUpcomming);
 getFetch_recommends(recommends);
 
-
 const move_mouse = (back_path) => {
-    const imgId = document.getElementById('img_back_images');
-    imgId.src = `https://image.tmdb.org/t/p/w500/t/p/w1920_and_h427_multi_faces/${back_path}`;
-}
+  const imgId = document.getElementById("img_back_images");
+  imgId.src = `https://image.tmdb.org/t/p/w500/t/p/w1920_and_h427_multi_faces/${back_path}`;
+};
 const next_page_details = (id) => {
-    localStorage.setItem('id_movie', id);
-}
+  localStorage.setItem("id_movie", id);
+};
 const btnHandler = (event) => {
-    event.target.parentElement.firstElementChild.classList.toggle("toggle");
-}
-const next_prev = (elem, teg,type) => {
-    console.log(type)
-    var a = document.getElementsByTagName(teg);
-    if(teg === 'p'){
-            for (i = 0; i < a.length; i++) {
-                a[i].classList.remove('selected');
-            }
-            elem.classList.add('selected');
-
-            if(type === 'onTv'){
-                document.querySelector('.column-cards').innerHTML = null;
-                getFetch_Popular(recommends);
-            }
-            if(type === 'forRent'){
-                document.querySelector('.column-cards').innerHTML = null;
-                getFetch_Popular(topRated);
-            }
-            if(type === 'inTheatres'){
-                document.querySelector('.column-cards').innerHTML = null;
-                getFetch_Popular(getUpcomming);
-            }
-            if(type === 'stream'){
-                document.querySelector('.column-cards').innerHTML = null;
-                getFetch_Popular(getPopular);
-            }
-    }
-    else if(teg === 'h4'){
-        for (i = 0; i < a.length; i++) {
-            a[i].classList.remove('selected');
-        }
-        elem.classList.add('selected');
-
-        if(type === 'movies'){
-            document.querySelector('.column-cards-1').innerHTML = null;
-            getFetch_getUpcomming(getUpcomming);
-        }
-        if(type === 'tv'){
-            document.querySelector('.column-cards-1').innerHTML = null;
-            getFetch_getUpcomming(topRated);
-        }
-    }
-    else if(teg === 'span'){
+  event.target.parentElement.firstElementChild.classList.toggle("toggle");
+};
+const next_prev = (elem, teg, type) => {
+  console.log(type);
+  var a = document.getElementsByTagName(teg);
+  if (teg === "p") {
     for (i = 0; i < a.length; i++) {
-        a[i].classList.remove('selected');
+      a[i].classList.remove("selected");
     }
-    elem.classList.add('selected');
+    elem.classList.add("selected");
 
-    if(type === 'today'){
-        document.querySelector('.column-cards-2').innerHTML = null;
-        getFetch_recommends(recommends);
+    if (type === "onTv") {
+      document.querySelector(".column-cards").innerHTML = null;
+      getFetch_Popular(recommends);
     }
-    if(type === 'thisWeek'){
-        document.querySelector('.column-cards-2').innerHTML = null;
-        getFetch_recommends(topRated);
+    if (type === "forRent") {
+      document.querySelector(".column-cards").innerHTML = null;
+      getFetch_Popular(topRated);
     }
+    if (type === "inTheatres") {
+      document.querySelector(".column-cards").innerHTML = null;
+      getFetch_Popular(getUpcomming);
     }
-    //  else{
-    //     for (i = 0; i < a.length; i++) {
-    //         a[i].classList.remove('select');
-    //     }
-    //     elem.classList.add('select');
-    //     if(type === 'on_tv'){
-    //         document.querySelector('.actor-group').innerHTML = null ?? [];
-    //         getFech_nowPLaying_two(recommends);
-    //     }
-    //     if(type === 'for_rent'){
-    //         document.querySelector('.actor-group').innerHTML = null ?? [];
-    //         getFech_nowPLaying_two(topRated);
-    //     }
-    //     if(type === 'in_theatre'){
-    //         document.querySelector('.actor-group').innerHTML = null ?? [];
-    //         getFech_nowPLaying_two(getUpcomming);
-    //     }
-    //     if(type === 'streaming'){
-    //         document.querySelector('.actor-group').innerHTML = [];
-    //         getFech_nowPLaying_two(nowPlaying);
-    //     }
-    // }
-}
+    if (type === "stream") {
+      document.querySelector(".column-cards").innerHTML = null;
+      getFetch_Popular(getPopular);
+    }
+  } else if (teg === "h4") {
+    for (i = 0; i < a.length; i++) {
+      a[i].classList.remove("selected");
+    }
+    elem.classList.add("selected");
+
+    if (type === "movies") {
+      document.querySelector(".column-cards-1").innerHTML = null;
+      getFetch_getUpcomming(getUpcomming);
+    }
+    if (type === "tv") {
+      document.querySelector(".column-cards-1").innerHTML = null;
+      getFetch_getUpcomming(topRated);
+    }
+  } else if (teg === "span") {
+    for (i = 0; i < a.length; i++) {
+      a[i].classList.remove("selected");
+    }
+    elem.classList.add("selected");
+
+    if (type === "today") {
+      document.querySelector(".column-cards-2").innerHTML = null;
+      getFetch_recommends(recommends);
+    }
+    if (type === "thisWeek") {
+      document.querySelector(".column-cards-2").innerHTML = null;
+      getFetch_recommends(topRated);
+    }
+  }
+  //  else{
+  //     for (i = 0; i < a.length; i++) {
+  //         a[i].classList.remove('select');
+  //     }
+  //     elem.classList.add('select');
+  //     if(type === 'on_tv'){
+  //         document.querySelector('.actor-group').innerHTML = null ?? [];
+  //         getFech_nowPLaying_two(recommends);
+  //     }
+  //     if(type === 'for_rent'){
+  //         document.querySelector('.actor-group').innerHTML = null ?? [];
+  //         getFech_nowPLaying_two(topRated);
+  //     }
+  //     if(type === 'in_theatre'){
+  //         document.querySelector('.actor-group').innerHTML = null ?? [];
+  //         getFech_nowPLaying_two(getUpcomming);
+  //     }
+  //     if(type === 'streaming'){
+  //         document.querySelector('.actor-group').innerHTML = [];
+  //         getFech_nowPLaying_two(nowPlaying);
+  //     }
+  // }
+};
 const sendInputValue = () => {
-    let input = document.getElementById('serch-input').value;
-    localStorage.setItem('input-search-value', input);
-    input.value = '';
+  let input = document.getElementById("serch-input").value;
+  localStorage.setItem("input-search-value", input);
+  input.value = "";
+};
+
+function onReady(callback) {
+  var intervalId = window.setInterval(function () {
+    if (document.getElementsByTagName("body")[0] !== undefined) {
+      window.clearInterval(intervalId);
+      callback.call(this);
+    }
+  }, 700);
 }
 
+function setVisible(selector, visible) {
+  document.querySelector(selector).style.display = visible ? "block" : "none";
+}
 
-$(document).ready(()=>{
-    $('.dws-progress-bar').circularProgress({
-        color: '#25ffe4',
-        line_width : 18,
-        height : '350px',
-        width : '350px',
-        percent : 0,
-        starting_position : 25
-    }).circularProgress('animate',100,2000);
-    // document.querySelector('body').classList.add('overflow');
-})
-
-$(window).on('load', ()=>{
-    var $preloader = $('#preloader');
-    $preloader.delay(2800).fadeOut('slow');
-    
-})
+onReady(function () {
+  setVisible(".page", true);
+  setVisible("#loading", false);
+});

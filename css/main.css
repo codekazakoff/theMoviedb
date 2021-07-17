@@ -979,3 +979,21 @@ p {
 .overflow {
   overflow-y: hidden;
 }
+
+#loading {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(192, 192, 192, 0.5);
+  background-image: url("https://i.stack.imgur.com/MnyxU.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body {
+  background: #fff url("https://i.imgur.com/KheAuef.png") top left repeat-x;
+}
